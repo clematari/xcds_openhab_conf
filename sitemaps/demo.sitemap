@@ -6,7 +6,12 @@ Frame label="XCDS Control" {
 			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_ACTUAL_TEMPERATURE
 			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_HUMIDITY
 			Text item=outTemp
-		    Switch item=MQTT_Test
+			Text item=BedroomTemperature
+			Text item=MainroomTemperature
+		    Switch item=Lght_DB_Mitte
+			Setpoint item=RS_DB_Garten minValue=0 maxValue=100 step=10
+			
+
 		}
 	
 }

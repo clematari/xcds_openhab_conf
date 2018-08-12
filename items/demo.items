@@ -1,4 +1,13 @@
 
 
-Number outTemp "Current Temp" { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
-Switch MQTT_Test "Testing..." { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
+Number outTemp              "Current Temp" ["CurrentTemperature"]   { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
+Number BedroomTemperature   "Schlafzimmer"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
+Number MainroomTemperature  "Wohnzimmer"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
+
+Switch Lght_DB_Mitte        "Dachboden"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
+Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/3:command:ON:1], >[phcmqtt:phc/amd/0/3:command:OFF:0]" }
+
+Rollershutter RS_DB_Garten  "Rollo Garten"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:position"}
+Rollershutter RS_DB_Strasse "Rollo Strasse"         ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:position"}
+Rollershutter RS_DB_Stiege  "Rollo Stiege"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:position"}
+
