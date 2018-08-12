@@ -9,13 +9,43 @@ Frame label="XCDS Control" {
 			Text item=BedroomTemperature
 			Text item=MainroomTemperature
 		    Switch item=Lght_DB_Mitte
+			Switch item=Lght_DB_Vorne
+			Switch item=Lght_DB_Hinten
+			Switch item=Lght_DB_STG
 
-			Setpoint item=RS_DB_Garten minValue=0 maxValue=100 step=10
-			Setpoint item=RS_DB_Stiege minValue=0 maxValue=100 step=10
-			Setpoint item=RS_DB_Gasse minValue=0 maxValue=100 step=10
+			Switch item=Lght_EG_WIR_Spots
+			Switch item=Lght_EG_KUE_Spots
+			Switch item=Lght_EG_HOF
+			Switch item=Lght_EG_WIR_Spiegel
+			Switch item=Lght_EG_KUE_Aplatte
+			Switch item=Lght_EG_KUE_Bar 
+			Switch item=Lght_EG_WC
+			Switch item=Lght_EG_VOR_Mitte
+			Switch item=Powr_EG_WIR_Lueftung
+			Switch item=Lght_EG_HR_Mitte
+			Switch item=Lght_EG_HR_aussen
+
+			Switch item=Lght_OG_DaZi02 
+			Switch item=Lght_OG_SiZi02
+			Switch item=Lght_OG_BAD_LA 
+			Switch item=Lght_OG_SRR_Mitte
+			Switch item=Lght_OG_BAD_Spiegel
+			Switch item=Lght_OG_SLZ_Xandi
+			Switch item=Lght_OG_SLZ_Clemi
+
+			Switch item=RS_DB_Garten 
+			Switch item=RS_DB_Stiege 
+			Switch item=RS_DB_Gasse 
 			
-			Setpoint item=RS_EG_Winterg 
-			Setpoint item=RS_EG_Markise 
+			Switch item=RS_Terrasse
+			Switch item=Terrasse_auf
+			Switch item=Terrasse_my
+			Switch item=Terrasse_zu
+
+			Switch item=RS_WinterG
+			Switch item=Winterg_auf
+			Switch item=Winterg_my
+			Switch item=Winterg_zu			    
 			
 
 		}

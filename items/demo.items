@@ -4,12 +4,44 @@ Number outTemp              "Current Temp" ["CurrentTemperature"]   { channel="h
 Number BedroomTemperature   "Schlafzimmer"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 
-Switch Lght_DB_Mitte        "Dachboden"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
+Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
+Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:ON:1], >[phcmqtt:phc/amd/4/2:command:OFF:0]" }
+Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/3:command:ON:1], >[phcmqtt:phc/amd/4/3:command:OFF:0]" }
+
+Switch Lght_EG_WIR_Spots    "WRaum Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/0:command:ON:1], >[phcmqtt:phc/amd/0/0:command:OFF:0]" }
+Switch Lght_EG_KUE_Spots    "Küche Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/1:command:ON:1], >[phcmqtt:phc/amd/0/1:command:OFF:0]" }
 Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/3:command:ON:1], >[phcmqtt:phc/amd/0/3:command:OFF:0]" }
+Switch Lght_OG_SiZi02       "Simon Leselicht"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/5:command:ON:1], >[phcmqtt:phc/amd/0/5:command:OFF:0]" }
+Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/7:command:ON:1], >[phcmqtt:phc/amd/0/7:command:OFF:0]" }
 
-Rollershutter RS_DB_Garten  "Rollo Garten"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:position"}
-Rollershutter RS_DB_Gasse   "Rollo Gasse"           ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:position"}
-Rollershutter RS_DB_Stiege  "Rollo Stiege"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:position"}
+Switch Lght_EG_HOF          "Hoflampe"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/0:command:ON:1], >[phcmqtt:phc/amd/1/0:command:OFF:0]" }
+Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/1:command:ON:1], >[phcmqtt:phc/amd/1/1:command:OFF:0]" }
+Switch Lght_EG_KUE_Aplatte  "Küche Arbeitsplatte"   ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/2:command:ON:1], >[phcmqtt:phc/amd/1/2:command:OFF:0]" }
+Switch Lght_EG_KUE_Bar      "Küche Bar"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/3:command:ON:1], >[phcmqtt:phc/amd/1/3:command:OFF:0]" }
+Switch Lght_EG_WC           "EG WC Licht"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/4:command:ON:1], >[phcmqtt:phc/amd/1/4:command:OFF:0]" }
+Switch Lght_EG_VOR_Mitte    "Vorzimmerlicht"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/5:command:ON:1], >[phcmqtt:phc/amd/1/5:command:OFF:0]" }
+Switch Powr_EG_WIR_Lueftung "WRaum Lueftung"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/6:command:ON:1], >[phcmqtt:phc/amd/1/6:command:OFF:0]" }
 
-Rollershutter RS_EG_Winterg "Wintergarten"          ["Switchable"] { channel="somfytahoma:exteriorscreen:4aaedadd:5c7aee9c-5659-4375-beda-61ec6dc3fe17:control"}
-Rollershutter RS_EG_Markise "Markise"               ["Switchable"] { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:control"}      
+Switch Lght_OG_SRR_Mitte  "Schrankraum"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/1:command:ON:1], >[phcmqtt:phc/amd/2/1:command:OFF:0]" }
+Switch Lght_EG_HR_Mitte   "Heizraum"                ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/3:command:ON:1], >[phcmqtt:phc/amd/2/3:command:OFF:0]" }
+Switch Lght_OG_SLZ_Xandi  "Bett Xandi"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/4:command:ON:1], >[phcmqtt:phc/amd/2/4:command:OFF:0]" }
+Switch Lght_OG_SLZ_Clemi  "Bett Clemi"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/5:command:ON:1], >[phcmqtt:phc/amd/2/5:command:OFF:0]" }
+Switch Lght_EG_HR_aussen  "Heizraum out"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/7:command:ON:1], >[phcmqtt:phc/amd/2/7:command:OFF:0]" }
+
+Switch Lght_DB_STG        "Stiege DB"               ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/0:command:ON:1], >[phcmqtt:phc/amd/4/0:command:OFF:0]" }
+Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:ON:1], >[phcmqtt:phc/amd/4/1:command:OFF:0]" }
+
+
+Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:dimmer"}
+Rollershutter RS_DB_Gasse   "Rollo Gasse [%d %%]"           ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:dimmer"}
+Rollershutter RS_DB_Stiege  "Rollo Stiege [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:dimmer"}
+
+Rollershutter RS_Terrasse  "Markise [%d %%]"      ["Switchable"]  { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:dimmer"}
+Switch  Terrasse_auf       "Terrasse 100%"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:904531d0-9287-4d66-b40e-a7ddfb538d68:trigger"}
+Switch  Terrasse_my        "Terrasse MY"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:4d1a866b-b9f7-43a8-8d9e-6bd5b4996b92:trigger"} 
+Switch  Terrasse_zu        "Terrasse 0%"        ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:533c0e36-3db5-4c46-a830-d7e3fa36e7c7:trigger"}    
+
+Rollershutter RS_WinterG  "Wintergarten [%d %%]" ["Switchable"]  { channel="somfytahoma:exteriorscreen:4aaedadd:5c7aee9c-5659-4375-beda-61ec6dc3fe17:control"}
+Switch  Winterg_auf       "Winterg 100%"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:ce26ed8d-905d-4424-8f18-bda2e596559c:trigger"}
+Switch  Winterg_my        "Winterg MY"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:b144204c-8dc2-42f5-a483-b75556831c68:trigger"} 
+Switch  Winterg_zu        "Winterg 0%"        ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:d5e55fc7-484a-4001-964e-a2738185e0f9:trigger"}  
