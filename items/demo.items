@@ -1,0 +1,4 @@
+
+
+Number outTemp "Current Temp" { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
+Switch MQTT_Test "Testing..." { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }

@@ -1,0 +1,12 @@
+sitemap demo label="Main Menu"
+{
+
+Frame label="XCDS Control" {
+		
+			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_ACTUAL_TEMPERATURE
+			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_HUMIDITY
+			Text item=outTemp
+		    Switch item=MQTT_Test
+		}
+	
+}
