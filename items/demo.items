@@ -8,6 +8,8 @@ Switch Lght_DB_Mitte        "Dachboden"             ["Lighting"] { mqtt=">[phcmq
 Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/3:command:ON:1], >[phcmqtt:phc/amd/0/3:command:OFF:0]" }
 
 Rollershutter RS_DB_Garten  "Rollo Garten"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:position"}
-Rollershutter RS_DB_Strasse "Rollo Strasse"         ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:position"}
+Rollershutter RS_DB_Gasse   "Rollo Gasse"           ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:position"}
 Rollershutter RS_DB_Stiege  "Rollo Stiege"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:position"}
 
+Rollershutter RS_EG_Winterg "Wintergarten"          ["Switchable"] { channel="somfytahoma:exteriorscreen:4aaedadd:5c7aee9c-5659-4375-beda-61ec6dc3fe17:control"}
+Rollershutter RS_EG_Markise "Markise"               ["Switchable"] { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:control"}      
