@@ -15,7 +15,7 @@ Frame label="XCDS Control" {
 
 			
 			Switch item=Lght_EG_KUE_Spots
-			/*Switch item=Lght_EG_HOF changes here */
+			/*Switch item=Lght_EG_HOF changes again here */
 			Switch item=Lght_EG_WIR_Spiegel
 			Switch item=Lght_EG_WIR_Spots
 			Switch item=Lght_EG_KUE_Aplatte
