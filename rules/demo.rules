@@ -1,0 +1,13 @@
+rule "WRAUM Türe geht zu"
+when
+    Item Sec_WIR_Tuer_close changed from OFF to ON
+then
+    postUpdate(Sec_WIR_Tuer, OFF)
+end
+
+rule "WRAUM Türe geht auf"
+when
+    Item Sec_WIR_Tuer_open changed from OFF to ON
+then
+    postUpdate(Sec_WIR_Tuer, ON)
+end

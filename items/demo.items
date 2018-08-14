@@ -6,6 +6,7 @@ Number MainroomTemperature  "Wohnzimmer"  ["CurrentTemperature"]    { channel="h
 
 Switch Sec_WIR_Tuer_close   "WRAUM Tuer zu"                         {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_SHORT"}
 Switch Sec_WIR_Tuer_open    "WRAUM Tuer auf"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
+Contact Sec_WIR_Tuer        "Wirtschaftsraum [%s]"     
 
 Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
 Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:ON:1], >[phcmqtt:phc/amd/4/2:command:OFF:0]" }

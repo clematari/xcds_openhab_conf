@@ -3,6 +3,10 @@ sitemap demo label="Main Menu"
 
 Frame label="XCDS Control" {
 		
+			
+
+			Text item=Sec_WIR_Tuer
+
 			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_ACTUAL_TEMPERATURE
 			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_HUMIDITY
 			Text item=outTemp
@@ -12,6 +16,7 @@ Frame label="XCDS Control" {
 			Switch item=Lght_DB_Vorne
 			Switch item=Lght_DB_Hinten
 			Switch item=Lght_DB_STG
+			
 
 			
 			Switch item=Lght_EG_KUE_Spots
