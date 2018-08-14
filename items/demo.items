@@ -32,11 +32,11 @@ Switch Lght_DB_STG        "Stiege DB"               ["Lighting"] { mqtt=">[phcmq
 Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:ON:1], >[phcmqtt:phc/amd/4/1:command:OFF:0]" }
 
 
-Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:dimmer"}
-Rollershutter RS_DB_Gasse   "Rollo Gasse [%d %%]"           ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:dimmer"}
-Rollershutter RS_DB_Stiege  "Rollo Stiege [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:dimmer"}
+Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:control"}
+Rollershutter RS_DB_Gasse   "Rollo Gasse [%d %%]"           ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:control"}
+Rollershutter RS_DB_Stiege  "Rollo Stiege [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:control"}
 
-Rollershutter RS_Terrasse  "Markise [%d %%]"      ["Switchable"]  { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:dimmer"}
+Rollershutter RS_Terrasse  "Markise [%d %%]"      ["Switchable"]  { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:control"}
 Switch  Terrasse_auf       "Terrasse 100%"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:904531d0-9287-4d66-b40e-a7ddfb538d68:trigger"}
 Switch  Terrasse_my        "Terrasse MY"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:4d1a866b-b9f7-43a8-8d9e-6bd5b4996b92:trigger"} 
 Switch  Terrasse_zu        "Terrasse 0%"        ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:533c0e36-3db5-4c46-a830-d7e3fa36e7c7:trigger"}    
