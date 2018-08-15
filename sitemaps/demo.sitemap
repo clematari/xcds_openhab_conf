@@ -4,17 +4,22 @@ sitemap demo label="Main Menu"
 Frame label="XCDS Control" {
 		
 			
+			Switch item=Sec_Allesaus icon="moon"
 
 			Text 	item=Sec_WIR_Tuer icon="door"
 			Text 	item=Sec_WIR_Tuer_lastupdate icon="calendar"
 
 			Text 	item=Sec_VOR_Tuer icon="frontdoor"
 			Text 	item=Sec_VOR_Tuer_lastupdate icon="calendar"
-			
+}	
+Frame label="XCDS Temp" {		
 			Text item=outTemp
 			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_HUMIDITY
 			Text item=BedroomTemperature
 			Text item=MainroomTemperature
+
+}
+Frame label="XCDS Schalter"{
 		    Switch item=Lght_DB_Mitte
 			Switch item=Lght_DB_Vorne
 			Switch item=Lght_DB_Hinten
