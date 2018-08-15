@@ -5,11 +5,14 @@ Frame label="XCDS Control" {
 		
 			
 
-			Text item=Sec_WIR_Tuer
+			Text 	item=Sec_WIR_Tuer icon="door"
+			Text 	item=Sec_WIR_Tuer_lastupdate icon="calendar"
 
-			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_ACTUAL_TEMPERATURE
-			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_HUMIDITY
+			Text 	item=Sec_VOR_Tuer icon="frontdoor"
+			Text 	item=Sec_VOR_Tuer_lastupdate icon="calendar"
+			
 			Text item=outTemp
+			Text item=homematic_HmIP_STHO_A_MEQ0006169_0010D709AF41DB_1_HUMIDITY
 			Text item=BedroomTemperature
 			Text item=MainroomTemperature
 		    Switch item=Lght_DB_Mitte

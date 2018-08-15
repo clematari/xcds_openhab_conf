@@ -1,12 +1,18 @@
 
 
-Number outTemp              "Current Temp" ["CurrentTemperature"]   { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
-Number BedroomTemperature   "Schlafzimmer"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
-Number MainroomTemperature  "Wohnzimmer"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
+Number outTemp              "Current Temp [%.1f °C]" ["CurrentTemperature"]   { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
+Number BedroomTemperature   "Schlafzimmer [%.1f °C]"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
+Number MainroomTemperature  "Wohnzimmer [%.1f °C]"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 
-Switch Sec_WIR_Tuer_close   "WRAUM Tuer zu"                         {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_SHORT"}
-Switch Sec_WIR_Tuer_open    "WRAUM Tuer auf"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
-Contact Sec_WIR_Tuer        "Wirtschaftsraum [%s]"     
+Switch      Sec_WIR_Tuer_close  "WRAUM Tuer zu"                         {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
+Switch      Sec_WIR_Tuer_open   "WRAUM Tuer auf"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_SHORT"}
+Contact     Sec_WIR_Tuer        "Wirtschaftsraum [MAP(fenster.map):%s]" 
+DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$tm.%1$td.%1$tY %1$tH:%1$tM]"
+
+Switch      Sec_VOR_Tuer_close  "VORZ Tuer zu"                         {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:3#PRESS_LONG"}
+Switch      Sec_VOR_Tuer_open   "VORZ Tuer auf"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:3#PRESS_SHORT"}
+Contact     Sec_VOR_Tuer        "Eingangstüre [MAP(fenster.map):%s]" 
+DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$tm.%1$td.%1$tY %1$tH:%1$tM]"
 
 Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
 Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:ON:1], >[phcmqtt:phc/amd/4/2:command:OFF:0]" }
