@@ -1,31 +1,14 @@
-rule "WRAUM Türe geht zu"
+rule "WRAUM Türe change"
 when
-    Item Sec_WIR_Tuer_close changed from OFF to ON
+    Item Sec_WIR_Tuer received update 
 then
-    Sec_WIR_Tuer.postUpdate("CLOSED")
     Sec_WIR_Tuer_lastupdate.postUpdate(new DateTimeType())
 end
 
-rule "WRAUM Türe geht auf"
+rule "VORZ Türe change"
 when
-    Item Sec_WIR_Tuer_open changed from OFF to ON
+    Item Sec_VOR_Tuer received update
 then
-    Sec_WIR_Tuer.postUpdate("OPEN")
-    Sec_WIR_Tuer_lastupdate.postUpdate(new DateTimeType())
-end
-
-rule "VORZ Türe geht zu"
-when
-    Item Sec_VOR_Tuer_close changed from OFF to ON
-then
-    Sec_VOR_Tuer.postUpdate("CLOSED")
     Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
 end
 
-rule "VORZ Türe geht auf"
-when
-    Item Sec_VOR_Tuer_open changed from OFF to ON
-then
-    Sec_VOR_Tuer.postUpdate("OPEN")
-    Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
-end
