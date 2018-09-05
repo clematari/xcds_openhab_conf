@@ -12,3 +12,13 @@ then
     Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
 end
 
+rule "Garten umschalten"
+when
+    Item PHM_Garten changed from ON to OFF
+then
+    if (Lght_GA_Holler.state == ON) {
+         Lght_GA_Holler.postUpdate(OFF)
+    } else {
+        Lght_GA_Holler.postUpdate(ON)
+    }
+end

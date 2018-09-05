@@ -4,13 +4,18 @@ Number outTemp              "Außentemperatur [%.1f °C]" ["CurrentTemperature"]
 Number BedroomTemperature   "Schlafzimmer [%.1f °C]"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer [%.1f °C]"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 
-Contact     Sec_WIR_Tuer   "WRAUM Tuer zu"                              {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
+Contact     Sec_WIR_Tuer   "WRAUM Tuer zu [MAP(de.map):%s]"     {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
 DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$tm.%1$td.%1$tY %1$tH:%1$tM]"
 
-Contact     Sec_VOR_Tuer    "Eingangstüre"                          {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
+Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"      {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
 DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$tm.%1$td.%1$tY %1$tH:%1$tM]"
 
-Switch      Sec_Allesaus  "Allesaus_ein"                                 {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:1#PRESS_SHORT"}
+Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
+Switch      PHM_Garten  "Garten"                                {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:1#PRESS"}
+
+
+Dimmer Lght_Handy           "Handyladestation"   {channel="tradfri:0100:gwb8d7af2b6a9b:65543:brightness"}
+Dimmer Lght_Stiegenkorp     "Stiegenkorpus"                    {channel="tradfri:0100:gwb8d7af2b6a9b:65547:brightness"}
 
 Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
 Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:ON:1], >[phcmqtt:phc/amd/4/2:command:OFF:0]" }
@@ -40,16 +45,26 @@ Switch Lght_DB_STG        "Stiege DB"               ["Lighting"] { mqtt=">[phcmq
 Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:ON:1], >[phcmqtt:phc/amd/4/1:command:OFF:0]" }
 
 
+
+
 Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b0c6504f-9186-4381-af4c-5e1797d4cb04:control"}
 Rollershutter RS_DB_Gasse   "Rollo Gasse [%d %%]"           ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:control"}
 Rollershutter RS_DB_Stiege  "Rollo Stiege [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:control"}
 
 Rollershutter RS_Terrasse  "Markise [%d %%]"      ["Switchable"]  { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:control"}
-Switch  Terrasse_auf       "Terrasse 100%"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:904531d0-9287-4d66-b40e-a7ddfb538d68:trigger"}
-Switch  Terrasse_my        "Terrasse MY"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:4d1a866b-b9f7-43a8-8d9e-6bd5b4996b92:trigger"} 
-Switch  Terrasse_zu        "Terrasse 0%"        ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:533c0e36-3db5-4c46-a830-d7e3fa36e7c7:trigger"}    
+Switch  Terrasse_auf       "Terrasse 100%"          ["Switchable"] { channel="somfytahoma:actiongroup:4aaedadd:904531d0-9287-4d66-b40e-a7ddfb538d68:trigger"}
+Switch  Terrasse_my        "Terrasse MY"          ["Switchable"] { channel="somfytahoma:actiongroup:4aaedadd:4d1a866b-b9f7-43a8-8d9e-6bd5b4996b92:trigger"} 
+Switch  Terrasse_zu        "Terrasse 0%"        ["Switchable"] { channel="somfytahoma:actiongroup:4aaedadd:533c0e36-3db5-4c46-a830-d7e3fa36e7c7:trigger"}    
 
 Rollershutter RS_WinterG  "Wintergarten [%d %%]" ["Switchable"]  { channel="somfytahoma:exteriorscreen:4aaedadd:5c7aee9c-5659-4375-beda-61ec6dc3fe17:control"}
-Switch  Winterg_auf       "Winterg 100%"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:ce26ed8d-905d-4424-8f18-bda2e596559c:trigger"}
-Switch  Winterg_my        "Winterg MY"          ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:b144204c-8dc2-42f5-a483-b75556831c68:trigger"} 
-Switch  Winterg_zu        "Winterg 0%"        ["Lighting"] { channel="somfytahoma:actiongroup:4aaedadd:d5e55fc7-484a-4001-964e-a2738185e0f9:trigger"}  
+Switch  Winterg_auf       "Winterg 100%"          ["Switchable"] { channel="somfytahoma:actiongroup:4aaedadd:ce26ed8d-905d-4424-8f18-bda2e596559c:trigger"}
+Switch  Winterg_my        "Winterg MY"          ["Switchable"] { channel="somfytahoma:actiongroup:4aaedadd:b144204c-8dc2-42f5-a483-b75556831c68:trigger"} 
+Switch  Winterg_zu        "Winterg 0%"        ["Switchable"] { channel="somfytahoma:actiongroup:4aaedadd:d5e55fc7-484a-4001-964e-a2738185e0f9:trigger"}  
+
+Switch Lght_GA_GHuette      "Gartenhuette"          ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:13#STATE"}
+Switch Lght_OUT_Zaun        "Garten Zaun"          ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:14#STATE"}
+Switch Lght_OUT_Sonja       "Garten Sonja"           ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:15#STATE"}
+Switch Lght_GA_Garage       "Garage"                ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:16#STATE"}
+Switch Lght_OUT_Holler      "Garten Holler"         ["Lightning"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:17#STATE"}
+Switch Plug_GA_Pool         "PoolPumpe"             ["Switchable"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:18#STATE"}
+Switch Lght_GA_Pergola      "Pergola"               ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:19#STATE"}
