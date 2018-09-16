@@ -4,7 +4,7 @@ Number outTemp              "Außentemperatur [%.1f °C]" ["CurrentTemperature"]
 Number BedroomTemperature   "Schlafzimmer [%.1f °C]"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer [%.1f °C]"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 
-Contact     Sec_WIR_Tuer   "WRAUM Tuer zu [MAP(de.map):%s]"     {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
+Contact     Sec_WIR_Tuer   "Wirtschaftsraum [MAP(de.map):%s]"     {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
 DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$tm.%1$td.%1$tY %1$tH:%1$tM]"
 
 Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"      {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
@@ -42,6 +42,9 @@ Switch Lght_EG_HR_aussen  "Heizraum out"            ["Lighting"] { mqtt=">[phcmq
 Switch Lght_DB_STG        "Stiege DB"               ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/0:command:ON:1], >[phcmqtt:phc/amd/4/0:command:OFF:0]" }
 Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:ON:1], >[phcmqtt:phc/amd/4/1:command:OFF:0]" }
 
+Switch Lght_EG_Tisch        "Tisch"                  ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:ON:1], >[phcmqtt:phc/dim/0/1:command:OFF:0]" }
+Switch Lght_EG_TVLicht      "TV Licht"               ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:ON:1], >[phcmqtt:phc/dim/0/0:command:OFF:0]" }
+
 
 
 
@@ -67,7 +70,10 @@ Switch Lght_OUT_Holler      "Garten Holler"        ["Lightning"] { channel="home
 Switch Plug_GA_Pool         "PoolPumpe"            ["Switchable"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:18#STATE"}
 Switch Lght_GA_Pergola      "Pergola"              ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:19#STATE"}
 
-
+Switch tas_chan4_1          "Tasmota01"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER1:state:default]" }
+Switch tas_chan4_2          "Tasmota02"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER2:state:default]" }
+Switch tas_chan4_3          "Tasmota03"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER3:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER3:state:default]" }
+Switch tas_chan4_4          "Tasmota04"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER4:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER4:state:default]" }
 
 
 /* not working - phc gateway crashes

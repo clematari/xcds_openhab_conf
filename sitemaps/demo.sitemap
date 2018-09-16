@@ -21,7 +21,12 @@ Frame label="XCDS Temp" {
 
 }
 Frame label="XCDS Schalter"{
-		    
+		    Switch item=tas_chan4_1 
+			Switch item=tas_chan4_2
+			Switch item=tas_chan4_3 
+			Switch item=tas_chan4_4
+			Switch item=Lght_EG_Tisch
+			Switch item=Lght_EG_TVLicht
 			Switch item=Lght_OUT_Holler
 			Switch item=Lght_OUT_Sonja
 			Switch item=Lght_OUT_Zaun
