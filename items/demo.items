@@ -75,7 +75,9 @@ Switch tas_chan4_2          "Tasmota02"            ["Lighting"] { mqtt=">[phcmqt
 Switch tas_chan4_3          "Tasmota03"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER3:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER3:state:default]" }
 Switch tas_chan4_4          "Tasmota04"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER4:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER4:state:default]" }
 
-
+Switch tas_wp01_1           "Tasmota Wall Plug 01" ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffwp01/cmnd/POWER:command:*:default], <[phcmqtt:tasmota/sonoffwp01/stat/POWER:state:default]" }
+Switch tas_Dual01_1             "Tasmota Dual 01.1"      ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER1:state:default]" }
+Switch tas_Dual01_2             "Tasmota Dual 01.2"      ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER2:state:default]" }
 /* not working - phc gateway crashes
 
 Switch item=Lght_OG_BAD_LA
