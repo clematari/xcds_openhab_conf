@@ -20,14 +20,29 @@ Frame label="XCDS Temp" {
 			Text item=MainroomTemperature
 
 }
+
+Frame label="PHC Status" {		
+			Text item=PHC_AMD_00
+			Text item=PHC_AMD_01
+			Text item=PHC_AMD_02
+			Text item=PHC_AMD_03
+			Text item=PHC_AMD_04
+
+}
 Frame label="XCDS Schalter"{
-		    Switch item=tas_Dual01_1
+		    
+			Switch item=Lght_OG_VOR_Mitte
+			Switch item=tas_Dual01_1
 			Switch item=tas_Dual01_2			
 			Switch item=tas_wp01_1
 			Switch item=tas_chan4_1 
 			Switch item=tas_chan4_2
 			Switch item=tas_chan4_3 
 			Switch item=tas_chan4_4
+			Switch item=Lght_OG_BAD_LA
+			Switch item=Lght_EG_HOF
+			Switch item=Powr_EG_WIR_Lueftung
+			
 			Switch item=Lght_EG_Tisch
 			Switch item=Lght_EG_TVLicht
 			Switch item=Lght_OUT_Holler
