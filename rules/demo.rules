@@ -1,3 +1,6 @@
+
+var Integer phc_int
+
 rule "WRAUM Türe change"
 when
     Item Sec_WIR_Tuer received update 
@@ -12,13 +15,76 @@ then
     Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
 end
 
-rule "Garten umschalten"
-when
-    Item PHM_Garten changed from ON to OFF
+rule "AMD0 update"
+when 
+    Item PHC_AMD_00 received update
 then
-    if (Lght_GA_Holler.state == ON) {
-         Lght_GA_Holler.postUpdate(OFF)
-    } else {
-        Lght_GA_Holler.postUpdate(ON)
-    }
+  
+
+ /* var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
+ */
+  PHC_Status.postUpdate(PHC_AMD_00.state.toString)
+
+  var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Lght_EG_WIR_Spots.postUpdate("ON")} else {Lght_EG_WIR_Spots.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Lght_EG_KUE_Spots.postUpdate("ON")} else {Lght_EG_KUE_Spots.postUpdate("OFF")}
+       
+   if (phc_int.bitwiseAnd(8) == 8) {
+     Lght_OG_DaZi02.postUpdate("ON")} else {Lght_OG_DaZi02.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(32) == 32) {
+    Lght_OG_SiZi02.postUpdate("ON")} else {Lght_OG_SiZi02.postUpdate("OFF")}
+       
+          
+   if (phc_int.bitwiseAnd(128) == 128) {
+    Lght_OG_BAD_LA.postUpdate("ON")} else {Lght_OG_BAD_LA.postUpdate("OFF")} 
+       
+
+
+end
+
+rule "AMD01 update"
+when 
+    Item PHC_AMD_01 received update
+then
+  
+
+ /* var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
+ */
+  PHC_Status.postUpdate(PHC_AMD_01.state.toString)
+
+  var Integer phc_int = Integer::parseInt(PHC_AMD_01.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Lght_EG_HOF.postUpdate("ON")} else {Lght_EG_HOF.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Lght_EG_WIR_Spiegel.postUpdate("ON")} else {Lght_EG_WIR_Spiegel.postUpdate("OFF")}
+
+    if (phc_int.bitwiseAnd(4) == 4) {
+      Lght_EG_KUE_Aplatte.postUpdate("ON")} else {Lght_EG_KUE_Aplatte.postUpdate("OFF")}
+       
+   if (phc_int.bitwiseAnd(8) == 8) {
+     Lght_EG_KUE_Bar.postUpdate("ON")} else {Lght_EG_KUE_Bar.postUpdate("OFF")}
+
+       if (phc_int.bitwiseAnd(16) == 16) {
+     Lght_EG_WC.postUpdate("ON")} else {Lght_EG_WC.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(32) == 32) {
+    Lght_EG_VOR_Mitte.postUpdate("ON")} else {Lght_EG_VOR_Mitte.postUpdate("OFF")}
+
+     if (phc_int.bitwiseAnd(64) == 64) {
+    Powr_EG_WIR_Lueftung.postUpdate("ON")} else {Powr_EG_WIR_Lueftung.postUpdate("OFF")}      
+          
+   if (phc_int.bitwiseAnd(128) == 128) {
+   Lght_DB_Hinten.postUpdate("ON")} else {Lght_DB_Hinten.postUpdate("OFF")} 
+       
+
+
 end

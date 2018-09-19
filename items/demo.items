@@ -20,9 +20,9 @@ Dimmer Lght_Stiegenkorp     "Stiegenkorpus"                    {channel="tradfri
 
 
 
-Switch Lght_EG_WIR_Spots    "WRaum Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/0:command:ON:1], >[phcmqtt:phc/amd/0/0:command:OFF:0]" }
-Switch Lght_EG_KUE_Spots    "Küche Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/1:command:ON:1], >[phcmqtt:phc/amd/0/1:command:OFF:0]" }
-Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/3:command:ON:1], >[phcmqtt:phc/amd/0/3:command:OFF:0]" }
+Switch Lght_EG_WIR_Spots    "WRaum Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/0:command:*:2], <[phcmqtt:phc/status/amd/0/0:state:default]", autoupdate="false"}
+Switch Lght_EG_KUE_Spots    "Küche Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/1:command:*:2], <[phcmqtt:phc/status/amd/0/1:state:default]", autoupdate="false"}
+Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/3:command:*:2], <[phcmqtt:phc/status/amd/0/3:state:default]", autoupdate="false"}
 Switch Lght_OG_SiZi02       "Simon Leselicht"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/5:command:*:2], <[phcmqtt:phc/status/amd/0/5:state:default]", autoupdate="false"}
 Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/7:command:*:2], <[phcmqtt:phc/status/amd/0/7:state:default]" , autoupdate="false"}
 
@@ -30,14 +30,13 @@ Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmq
 
 
 Switch Lght_EG_HOF          "Hoflampe"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/0:command:*:2], <[phcmqtt:phc/status/amd/1/0:state:default]" , autoupdate="false"}
-Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/1:command:ON:1], >[phcmqtt:phc/amd/1/1:command:OFF:0]" }
-Switch Lght_EG_KUE_Aplatte  "Küche Arbeitsplatte"   ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/2:command:ON:1], >[phcmqtt:phc/amd/1/2:command:OFF:0]" }
-Switch Lght_EG_KUE_Bar      "Küche Bar"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/3:command:ON:1], >[phcmqtt:phc/amd/1/3:command:OFF:0]" }
-Switch Lght_EG_WC           "EG WC Licht"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/4:command:ON:1], >[phcmqtt:phc/amd/1/4:command:OFF:0]" }
-Switch Lght_EG_VOR_Mitte    "Vorzimmerlicht"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/5:command:ON:1], >[phcmqtt:phc/amd/1/5:command:OFF:0]" }
+Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/1:command:*:2], <[phcmqtt:phc/status/amd/1/1:state:default]" , autoupdate="false"}
+Switch Lght_EG_KUE_Aplatte  "Küche Arbeitsplatte"   ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/2:command:*:2], <[phcmqtt:phc/status/amd/1/2:state:default]" , autoupdate="false"}
+Switch Lght_EG_KUE_Bar      "Küche Bar"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/3:command:*:2], <[phcmqtt:phc/status/amd/1/3:state:default]" , autoupdate="false"}
+Switch Lght_EG_WC           "EG WC Licht"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/4:command:*:2], <[phcmqtt:phc/status/amd/1/4:state:default]" , autoupdate="false"}
+Switch Lght_EG_VOR_Mitte    "Vorzimmerlicht"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/5:command:*:2], <[phcmqtt:phc/status/amd/1/5:state:default]" , autoupdate="false"}
 Switch Powr_EG_WIR_Lueftung "WRaum Lueftung"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/6:command:*:2], <[phcmqtt:phc/status/amd/1/6:state:default]" , autoupdate="false"}
-Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:ON:1], >[phcmqtt:phc/amd/1/7:command:OFF:0]" }
-
+Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:*:2], <[phcmqtt:phc/status/amd/1/7:state:default]" , autoupdate="false"}
 
 Switch Lght_OG_VOR_Mitte     "OG Vorzimmer"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/6:command:*:2], <[phcmqtt:phc/status/amd/3/6:state:default]" , autoupdate="false"}
 
@@ -90,12 +89,13 @@ Switch tas_wp01_1           "Tasmota Wall Plug 01" ["Lighting"] { mqtt=">[phcmqt
 Switch tas_Dual01_1         "Tasmota Dual 01.1"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER1:state:default]" }
 Switch tas_Dual01_2         "Tasmota Dual 01.2"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER2:state:default]" }
 
-String PHC_AMD_00           "PHC Modul AMD 00 [%d]"      { mqtt="<[phcmqtt:phc/status/amd/0:state:default]"}
-String PHC_AMD_01           "PHC Modul AMD 01 [%d]"      { mqtt="<[phcmqtt:phc/status/amd/1:state:default]"}
-String PHC_AMD_02           "PHC Modul AMD 02 [%d]"      { mqtt="<[phcmqtt:phc/status/amd/2:state:default]"}
-String PHC_AMD_03           "PHC Modul AMD 03 [%d]"      { mqtt="<[phcmqtt:phc/status/amd/3:state:default]"}
-String PHC_AMD_04           "PHC Modul AMD 04 [%d]"      { mqtt="<[phcmqtt:phc/status/amd/4:state:default]"}
+String PHC_AMD_00           "PHC Modul AMD 00 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/0:state:default]"}
+String PHC_AMD_01           "PHC Modul AMD 01 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/1:state:default]"}
+String PHC_AMD_02           "PHC Modul AMD 02 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/2:state:default]"}
+String PHC_AMD_03           "PHC Modul AMD 03 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/3:state:default]"}
+String PHC_AMD_04           "PHC Modul AMD 04 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/4:state:default]"}
 
+String PHC_Status           "PHC Status [%d]"
 
 /*nicht sicher, ob die funktionieren 
 Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/7:command:ON:1], >[phcmqtt:phc/amd/0/7:command:OFF:0]" }
