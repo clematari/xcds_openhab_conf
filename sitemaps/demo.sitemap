@@ -39,14 +39,14 @@ Frame label="PHC AMD00"{
 			Switch item=Lght_OG_BAD_LA  
 }
 Frame label="PHC AMD01"{
-Switch item=Lght_EG_HOF          
-Switch item=Lght_EG_WIR_Spiegel  
-Switch item=Lght_EG_KUE_Aplatte  
-Switch item=Lght_EG_KUE_Bar      
-Switch item=Lght_EG_WC           
-Switch item=Lght_EG_VOR_Mitte   
-Switch item=Powr_EG_WIR_Lueftung 
-Switch item=Lght_DB_Hinten       
+			Switch item=Lght_EG_HOF          
+			Switch item=Lght_EG_WIR_Spiegel  
+			Switch item=Lght_EG_KUE_Aplatte  
+			Switch item=Lght_EG_KUE_Bar      
+			Switch item=Lght_EG_WC           
+			Switch item=Lght_EG_VOR_Mitte   
+			Switch item=Powr_EG_WIR_Lueftung 
+			Switch item=Lght_DB_Hinten       
 
 }
 

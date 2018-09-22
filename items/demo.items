@@ -89,11 +89,11 @@ Switch tas_wp01_1           "Tasmota Wall Plug 01" ["Lighting"] { mqtt=">[phcmqt
 Switch tas_Dual01_1         "Tasmota Dual 01.1"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER1:state:default]" }
 Switch tas_Dual01_2         "Tasmota Dual 01.2"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER2:state:default]" }
 
-String PHC_AMD_00           "PHC Modul AMD 00 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/0:state:default]"}
-String PHC_AMD_01           "PHC Modul AMD 01 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/1:state:default]"}
-String PHC_AMD_02           "PHC Modul AMD 02 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/2:state:default]"}
-String PHC_AMD_03           "PHC Modul AMD 03 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/3:state:default]"}
-String PHC_AMD_04           "PHC Modul AMD 04 [%S]"      { mqtt="<[phcmqtt:phc/status/amdstatus/4:state:default]"}
+String PHC_AMD_00           "PHC Modul AMD 00 [%d]"      { mqtt="<[phcmqtt:phc/status/amdstatus/0:state:default]"}
+String PHC_AMD_01           "PHC Modul AMD 01 [%d]"      { mqtt="<[phcmqtt:phc/status/amdstatus/1:state:default]"}
+String PHC_AMD_02           "PHC Modul AMD 02 [%d]"      { mqtt="<[phcmqtt:phc/status/amdstatus/2:state:default]"}
+String PHC_AMD_03           "PHC Modul AMD 03 [%d]"      { mqtt="<[phcmqtt:phc/status/amdstatus/3:state:default]"}
+String PHC_AMD_04           "PHC Modul AMD 04 [%d]"      { mqtt="<[phcmqtt:phc/status/amdstatus/4:state:default]"}
 
 String PHC_Status           "PHC Status [%d]"
 
