@@ -20,15 +20,8 @@ Frame label="XCDS Temp" {
 			Text item=MainroomTemperature
 
 }
-
-Frame label="PHC Status" {		
-			Text item=PHC_AMD_00
-			Text item=PHC_AMD_01
-			Text item=PHC_AMD_02
-			Text item=PHC_AMD_03
-			Text item=PHC_AMD_04
-			Text item=PHC_Status
-
+Frame label="Status" {
+Group item=grp_phcstatus label= "PHC Status"		
 }
 Frame label="PHC AMD00"{
 		    
@@ -49,6 +42,21 @@ Frame label="PHC AMD01"{
 			Switch item=Lght_DB_Hinten       
 
 }
+Frame label="PHC AMD02"{
+			Switch item=Lght_OG_SRR_Mitte  
+			Switch item=Lght_EG_HR_Mitte   
+			Switch item=Lght_OG_SLZ_Xandi  
+			Switch item=Lght_OG_SLZ_Clemi  
+			Switch item=Lght_EG_HR_aussen  
+}
+Frame label="PHC AMD03"{
+			Switch item=Lght_DB_STG       
+			Switch item=Lght_OG_BAD_Spiegel  
+			Switch item=Lght_DB_Vorne        
+			Switch item=Lght_DB_Mitte       
+}
+
+
 
 
 Frame label="XCDS Schalter"{			
