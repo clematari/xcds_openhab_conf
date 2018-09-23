@@ -65,10 +65,10 @@ Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmq
 Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
 
 
-Switch Lght_EG_Tisch        "Tisch"                  ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], >[phcmqtt:phc/dim/0/1:command:OFF:0]" , autoupdate="false"}
-Switch Lght_EG_TVLicht      "TV Licht"               ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], >[phcmqtt:phc/dim/0/0:command:OFF:0]" , autoupdate="false"}
-
-
+Switch Lght_EG_Tisch        "Tisch"                  ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:ON:1], >[phcmqtt:phc/dim/0/1:command:OFF:0]" , autoupdate="false"}
+Switch Lght_EG_TVLicht      "TV Licht"               ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:ON:1], >[phcmqtt:phc/dim/0/0:command:OFF:0]" , autoupdate="false"}
+Switch Lght_OG_Daniel_Dim   "Daniel Mitte"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/1/0:command:ON:1], >[phcmqtt:phc/dim/1/0:command:OFF:0]" , autoupdate="false"}
+Switch Lght_OG_Simon_Dim    "Daniel Mitte"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/1/1:command:ON:1], >[phcmqtt:phc/dim/1/1:command:OFF:0]" , autoupdate="false"}
 
 
 Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:22b6c708:b0c6504f-9186-4381-af4c-5e1797d4cb04:control"}
@@ -84,6 +84,8 @@ Switch Lght_GA_Garage       "Garage"               ["Lighting"] { channel="homem
 Switch Lght_OUT_Holler      "Garten Holler"        ["Lightning"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:17#STATE"}
 Switch Plug_GA_Pool         "PoolPumpe"            ["Switchable"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:18#STATE"}
 Switch Lght_GA_Pergola      "Pergola"              ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:19#STATE"}
+Switch SW_DB_Funk_Schreib1  "DB Schreibtisch EIN"  ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:1#PRESS_SHORT", autoupdate="false"}
+Switch SW_DB_Funk_Schreib2  "DB Schreibtisch AUS"  ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:2#PRESS_SHORT", autoupdate="false"}
 
 Switch tas_chan4_1          "Tasmota01"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER1:state:default]" }
 Switch tas_chan4_2          "Tasmota02"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER2:state:default]" }

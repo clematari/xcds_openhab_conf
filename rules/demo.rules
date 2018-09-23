@@ -27,11 +27,29 @@ then
     Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
 end
 
+rule "DB Funkschalter EIN"
+when
+    Item SW_DB_Funk_Schreib1 received update ON
+then
+ 
+    Lght_DB_Mitte.sendCommand(ON) /*means toggle - not on or off*/  
+     
+end
+
+rule "DB Funkschalter AUS"
+when
+    Item SW_DB_Funk_Schreib2 received update ON
+then
+ 
+    Lght_DB_Hinten.sendCommand(ON)  
+     
+end
+
+/* ------------------------------------------ AMD MQTT update rules ------------------------------------------*/
 rule "AMD0 update"
 when 
     Item PHC_AMD_00 received update
 then
-  
 
  /* var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
  */

@@ -15,9 +15,9 @@ Frame label="XCDS Control" {
 
 }	
 Frame label="XCDS Temp" {		
-			Text item=outTemp
-			Text item=BedroomTemperature
-			Text item=MainroomTemperature
+			Text item=outTemp 				icon="climate-on"
+			Text item=BedroomTemperature	icon="temperature"
+			Text item=MainroomTemperature	icon="temperature"
 
 }
 Frame label="Status" {
@@ -76,7 +76,10 @@ Frame label="PHC AMD04"{
 			Switch 	item=Plug_OUT_Terrasse    	icon="socket"  
 }
 
-
+Frame label="Homematic"{
+			Switch item=SW_DB_Funk_Schreib1
+			Switch item=SW_DB_Funk_Schreib2
+}	
 
 
 Frame label="XCDS Tasmota Schalter"{			
