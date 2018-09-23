@@ -1,15 +1,15 @@
 
 var Integer phc_int
 
-rule "Cron 5 Minuten" 
+rule "Cron 2 Minuten" 
 when 
     Time cron "0 0/2 * * * ?" 
 then
-    publish ("phcmqtt","phc/amd/0/1","3")
-    publish ("phcmqtt","phc/amd/1/1","3")
-    publish ("phcmqtt","phc/amd/2/1","3")
-    publish ("phcmqtt","phc/amd/3/1","3")
-    publish ("phcmqtt","phc/amd/4/1","3")
+    publish ("phcmqtt","phcstatus/amd/0/1","3")
+    publish ("phcmqtt","phcstatus/amd/1/1","3")
+    publish ("phcmqtt","phcstatus/amd/2/1","3")
+    publish ("phcmqtt","phcstatus/amd/3/1","3")
+    publish ("phcmqtt","phcstatus/amd/4/1","3")
 end
 
 
@@ -45,13 +45,21 @@ then
        
     if (phc_int.bitwiseAnd(2) == 2) {
       Lght_EG_KUE_Spots.postUpdate("ON")} else {Lght_EG_KUE_Spots.postUpdate("OFF")}
-       
+    
+    if (phc_int.bitwiseAnd(4) == 4) {
+      Lght_NixWissen02.postUpdate("ON")} else {Lght_NixWissen02.postUpdate("OFF")}
+   
    if (phc_int.bitwiseAnd(8) == 8) {
      Lght_OG_DaZi02.postUpdate("ON")} else {Lght_OG_DaZi02.postUpdate("OFF")}
+  
+   if (phc_int.bitwiseAnd(16) == 16) {
+      Plug_EG_WZ_TV.postUpdate("ON")} else {Plug_EG_WZ_TV.postUpdate("OFF")}
        
     if (phc_int.bitwiseAnd(32) == 32) {
     Lght_OG_SiZi02.postUpdate("ON")} else {Lght_OG_SiZi02.postUpdate("OFF")}
-       
+
+    if (phc_int.bitwiseAnd(64) == 64) {
+    Plug_EG_WZ_Lichtl.postUpdate("ON")} else {Plug_EG_WZ_Lichtl.postUpdate("OFF")}    
           
    if (phc_int.bitwiseAnd(128) == 128) {
     Lght_OG_BAD_LA.postUpdate("ON")} else {Lght_OG_BAD_LA.postUpdate("OFF")} 
@@ -65,12 +73,7 @@ when
     Item PHC_AMD_01 received update
 then
   
-
- /* var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
- */
-  PHC_Status.postUpdate(PHC_AMD_01.state.toString)
-
-  var Integer phc_int = Integer::parseInt(PHC_AMD_01.state.toString)
+   var Integer phc_int = Integer::parseInt(PHC_AMD_01.state.toString)
   
      
    if (phc_int.bitwiseAnd(1) == 1) {
@@ -97,6 +100,107 @@ then
    if (phc_int.bitwiseAnd(128) == 128) {
    Lght_DB_Hinten.postUpdate("ON")} else {Lght_DB_Hinten.postUpdate("OFF")} 
        
+end
 
 
+rule "AMD02 update"
+when 
+    Item PHC_AMD_02 received update
+then
+  
+   var Integer phc_int = Integer::parseInt(PHC_AMD_02.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Plug_OG_BoxStrom.postUpdate("ON")} else {Plug_OG_BoxStrom.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Lght_OG_SRR_Mitte.postUpdate("ON")} else {Lght_OG_SRR_Mitte.postUpdate("OFF")}
+
+    if (phc_int.bitwiseAnd(4) == 4) {
+      Lght_OG_SRR_Leds.postUpdate("ON")} else {Lght_OG_SRR_Leds.postUpdate("OFF")}
+       
+   if (phc_int.bitwiseAnd(8) == 8) {
+     Lght_EG_HR_Mitte.postUpdate("ON")} else {Lght_EG_HR_Mitte.postUpdate("OFF")}
+
+       if (phc_int.bitwiseAnd(16) == 16) {
+     Lght_OG_SLZ_Xandi.postUpdate("ON")} else {Lght_OG_SLZ_Xandi.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(32) == 32) {
+    Lght_OG_SLZ_Clemi.postUpdate("ON")} else {Lght_OG_SLZ_Clemi.postUpdate("OFF")}
+
+     if (phc_int.bitwiseAnd(64) == 64) {
+    Lght_OG_SRR_Spieg.postUpdate("ON")} else {Lght_OG_SRR_Spieg.postUpdate("OFF")}      
+          
+   if (phc_int.bitwiseAnd(128) == 128) {
+   Lght_EG_HR_aussen.postUpdate("ON")} else {Lght_EG_HR_aussen.postUpdate("OFF")} 
+       
+end
+
+rule "AMD03 update"
+when 
+    Item PHC_AMD_03 received update
+then
+  
+   var Integer phc_int = Integer::parseInt(PHC_AMD_03.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Lght_OUT_Eingang.postUpdate("ON")} else {Lght_OUT_Eingang.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Plug_EG_WC_Vent.postUpdate("ON")} else {Plug_EG_WC_Vent.postUpdate("OFF")}
+
+    if (phc_int.bitwiseAnd(4) == 4) {
+      Plug_OG_WC_Vent.postUpdate("ON")} else {Plug_OG_WC_Vent.postUpdate("OFF")}
+       
+   if (phc_int.bitwiseAnd(8) == 8) {
+     Lght_OG_WC_Mitte.postUpdate("ON")} else {Lght_OG_WC_Mitte.postUpdate("OFF")}
+
+       if (phc_int.bitwiseAnd(16) == 16) {
+     Lght_EG_VZ_Lichts.postUpdate("ON")} else {Lght_EG_VZ_Lichts.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(32) == 32) {
+    Lght_NixWissen35.postUpdate("ON")} else {Lght_NixWissen35.postUpdate("OFF")}
+
+     if (phc_int.bitwiseAnd(64) == 64) {
+    Lght_OG_VOR_Mitte.postUpdate("ON")} else {Lght_OG_VOR_Mitte.postUpdate("OFF")}      
+          
+   if (phc_int.bitwiseAnd(128) == 128) {
+   Lght_EG_VOR_Korpus.postUpdate("ON")} else {Lght_EG_VOR_Korpus.postUpdate("OFF")} 
+       
+end
+
+rule "AMD04 update"
+when 
+    Item PHC_AMD_04 received update
+then
+  
+   var Integer phc_int = Integer::parseInt(PHC_AMD_04.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Lght_DB_STG.postUpdate("ON")} else {Lght_DB_STG.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Lght_OG_BAD_Spiegel.postUpdate("ON")} else {Lght_OG_BAD_Spiegel.postUpdate("OFF")}
+
+    if (phc_int.bitwiseAnd(4) == 4) {
+      Lght_DB_Vorne.postUpdate("ON")} else {Lght_DB_Vorne.postUpdate("OFF")}
+       
+   if (phc_int.bitwiseAnd(8) == 8) {
+     Lght_DB_Mitte.postUpdate("ON")} else {Lght_DB_Mitte.postUpdate("OFF")}
+
+       if (phc_int.bitwiseAnd(16) == 16) {
+     Plug_WIR_Scanner.postUpdate("ON")} else {Plug_WIR_Scanner.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(32) == 32) {
+    Plug_OUT_Terrasse.postUpdate("ON")} else {Plug_OUT_Terrasse.postUpdate("OFF")}
+/*
+     if (phc_int.bitwiseAnd(64) == 64) {
+    Lght_OG_VOR_Mitte.postUpdate("ON")} else {Lght_OG_VOR_Mitte.postUpdate("OFF")}      
+          
+   if (phc_int.bitwiseAnd(128) == 128) {
+   Lght_EG_VOR_Korpus.postUpdate("ON")} else {Lght_EG_VOR_Korpus.postUpdate("OFF")} 
+  */     
 end

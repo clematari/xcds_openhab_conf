@@ -27,8 +27,10 @@ Frame label="PHC AMD00"{
 		    
 			Switch item=Lght_EG_WIR_Spots
 			Switch item=Lght_EG_KUE_Spots
+			Switch item=Lght_NixWissen02
 			Switch item=Lght_OG_DaZi02 
 			Switch item=Lght_OG_SiZi02
+			Switch item=Plug_EG_WZ_Lichtl icon="socket"
 			Switch item=Lght_OG_BAD_LA  
 }
 Frame label="PHC AMD01"{
@@ -38,22 +40,40 @@ Frame label="PHC AMD01"{
 			Switch item=Lght_EG_KUE_Bar      
 			Switch item=Lght_EG_WC           
 			Switch item=Lght_EG_VOR_Mitte   
-			Switch item=Powr_EG_WIR_Lueftung 
+			Switch item=Powr_EG_WIR_Lueftung icon="socket"
 			Switch item=Lght_DB_Hinten       
 
 }
 Frame label="PHC AMD02"{
-			Switch item=Lght_OG_SRR_Mitte  
+			Switch item=Plug_OG_BoxStrom icon="socket"
+			Switch item=Lght_OG_SRR_Mitte
+			Switch item=Lght_OG_SRR_Leds  
 			Switch item=Lght_EG_HR_Mitte   
 			Switch item=Lght_OG_SLZ_Xandi  
 			Switch item=Lght_OG_SLZ_Clemi  
+			Switch item=Lght_OG_SRR_Spieg
 			Switch item=Lght_EG_HR_aussen  
 }
-Frame label="PHC AMD03"{
+
+Frame label="PHC AMD04"{
+			Switch item= Lght_OUT_Eingang   
+			Switch item= Plug_EG_WC_Vent    icon="socket"
+			Switch item= Plug_OG_WC_Vent    icon="socket"
+			Switch item= Lght_OG_WC_Mitte   
+			Switch item= Lght_EG_VZ_Lichts  
+			Switch item= Lght_NixWissen35   
+			Switch item= Lght_OG_VOR_Mitte  
+			Switch item= Lght_EG_VOR_Korpus 
+}
+
+
+Frame label="PHC AMD04"{			
 			Switch item=Lght_DB_STG       
 			Switch item=Lght_OG_BAD_Spiegel  
 			Switch item=Lght_DB_Vorne        
-			Switch item=Lght_DB_Mitte       
+			Switch item=Lght_DB_Mitte
+			Switch item=Plug_WIR_Scanner 		icon="socket"
+			Switch item=Plug_OUT_Terrasse    	icon="socket"  
 }
 
 
