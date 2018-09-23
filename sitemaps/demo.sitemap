@@ -25,13 +25,13 @@ Group item=grp_phcstatus label= "PHC Status"
 }
 Frame label="PHC AMD00"{
 		    
-			Switch item=Lght_EG_WIR_Spots
-			Switch item=Lght_EG_KUE_Spots
-			Switch item=Lght_NixWissen02
-			Switch item=Lght_OG_DaZi02 
-			Switch item=Lght_OG_SiZi02
-			Switch item=Plug_EG_WZ_Lichtl icon="socket"
-			Switch item=Lght_OG_BAD_LA  
+			Switch 	item=Lght_EG_WIR_Spots
+			Switch 	item=Lght_EG_KUE_Spots
+			Switch 	item=Lght_NixWissen02
+			Switch 	item=Lght_OG_DaZi02 
+			Switch 	item=Lght_OG_SiZi02
+			Text	item=Plug_EG_WZ_Lichtl icon="socket"
+			Switch 	item=Lght_OG_BAD_LA  
 }
 Frame label="PHC AMD01"{
 			Switch item=Lght_EG_HOF          
@@ -55,7 +55,7 @@ Frame label="PHC AMD02"{
 			Switch item=Lght_EG_HR_aussen  
 }
 
-Frame label="PHC AMD04"{
+Frame label="PHC AMD03"{
 			Switch item= Lght_OUT_Eingang   
 			Switch item= Plug_EG_WC_Vent    icon="socket"
 			Switch item= Plug_OG_WC_Vent    icon="socket"
@@ -68,19 +68,18 @@ Frame label="PHC AMD04"{
 
 
 Frame label="PHC AMD04"{			
-			Switch item=Lght_DB_STG       
-			Switch item=Lght_OG_BAD_Spiegel  
-			Switch item=Lght_DB_Vorne        
-			Switch item=Lght_DB_Mitte
-			Switch item=Plug_WIR_Scanner 		icon="socket"
-			Switch item=Plug_OUT_Terrasse    	icon="socket"  
+			Switch 	item=Lght_DB_STG       
+			Switch 	item=Lght_OG_BAD_Spiegel  
+			Switch 	item=Lght_DB_Vorne        
+			Switch 	item=Lght_DB_Mitte
+			Text 	item=Plug_WIR_Scanner 		icon="socket"
+			Switch 	item=Plug_OUT_Terrasse    	icon="socket"  
 }
 
 
 
 
-Frame label="XCDS Schalter"{			
-			Switch item=Lght_OG_VOR_Mitte
+Frame label="XCDS Tasmota Schalter"{			
 			Switch item=tas_Dual01_1
 			Switch item=tas_Dual01_2			
 			Switch item=tas_wp01_1
@@ -88,66 +87,15 @@ Frame label="XCDS Schalter"{
 			Switch item=tas_chan4_2
 			Switch item=tas_chan4_3 
 			Switch item=tas_chan4_4
-			Switch item=Lght_OG_BAD_LA
-			Switch item=Lght_EG_HOF
-			Switch item=Powr_EG_WIR_Lueftung
 			
-			Switch item=Lght_EG_Tisch
-			Switch item=Lght_EG_TVLicht
-			Switch item=Lght_OUT_Holler
-			Switch item=Lght_OUT_Sonja
-			Switch item=Lght_OUT_Zaun
-			Switch item=Lght_GA_Pergola
-
-			Switch item=Lght_GA_Garage
-			Switch item=Lght_GA_GHuette
-
-			Switch item=Plug_GA_Pool icon="socket"
-			
-			
-			Switch item=Lght_DB_Mitte
-			Switch item=Lght_DB_Vorne
-			Switch item=Lght_DB_Hinten
-			Switch item=Lght_DB_STG
-			
-
-			
-			Switch item=Lght_EG_KUE_Spots
-			
-			Switch item=Lght_EG_WIR_Spiegel
-			
-			Switch item=Lght_EG_KUE_Aplatte
-			Switch item=Lght_EG_KUE_Bar 
-			Switch item=Lght_EG_WC
-			Switch item=Lght_EG_VOR_Mitte
-			
-			Switch item=Lght_EG_HR_Mitte
-			Switch item=Lght_EG_HR_aussen
-
-			Switch item=Lght_OG_DaZi02 
-			Switch item=Lght_OG_SiZi02
-			
-			Switch item=Lght_OG_SRR_Mitte
-			Switch item=Lght_OG_BAD_Spiegel
-			Switch item=Lght_OG_SLZ_Xandi
-			Switch item=Lght_OG_SLZ_Clemi
-
-			Switch item=RS_DB_Garten 
-			Switch item=RS_DB_Stiege 
-			Switch item=RS_DB_Gasse 
-			
-			Switch item=RS_Terrasse
-			Switch item=Terrasse_auf
-			Switch item=Terrasse_my
-			Switch item=Terrasse_zu
-
-			Switch item=RS_WinterG
-			Switch item=Winterg_auf
-			Switch item=Winterg_my
-			Switch item=Winterg_zu			    
-			
-			Slider item=Lght_Stiegenkorp
-			Slider item=Lght_Handy
 		}
-	
+
+Frame label="XCDS Rollershutter"{			
+			Switch item=RS_DB_Gasse
+			Switch item=RS_DB_Garten
+			Switch item=RS_DB_Stiege
+			Switch item=RS_Terrasse
+			Switch item=RS_WinterG
+			}	
+
 }

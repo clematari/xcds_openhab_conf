@@ -5,11 +5,11 @@ rule "Cron 2 Minuten"
 when 
     Time cron "0 0/2 * * * ?" 
 then
-    publish ("phcmqtt","phcstatus/amd/0/1","3")
-    publish ("phcmqtt","phcstatus/amd/1/1","3")
-    publish ("phcmqtt","phcstatus/amd/2/1","3")
-    publish ("phcmqtt","phcstatus/amd/3/1","3")
-    publish ("phcmqtt","phcstatus/amd/4/1","3")
+    publish ("phcmqtt","phc/amd/0/1","3")
+    publish ("phcmqtt","phc/amd/1/1","3")
+    publish ("phcmqtt","phc/amd/2/1","3")
+    publish ("phcmqtt","phc/amd/3/1","3")
+    publish ("phcmqtt","phc/amd/4/1","3")
 end
 
 
