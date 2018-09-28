@@ -27,6 +27,13 @@ then
     Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
 end
 
+rule "Daniel Fenster change"
+when
+    Item Sec_Fenster_Daniel received update
+then
+    Sec_EG_DanielFenster_lastupdate.postUpdate(new DateTimeType())
+end
+
 rule "DB Funkschalter EIN"
 when
     Item SW_DB_Funk_Schreib1 received update ON
