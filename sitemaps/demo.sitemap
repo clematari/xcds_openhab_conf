@@ -22,6 +22,13 @@ Frame label="XCDS Temp" {
 			Text item=MainroomTemperature	icon="temperature"
 
 }
+Frame label="Daniel Zimmer" {
+			Switch item=Lght_OG_DaZi_Desk01
+			Switch item=Lght_OG_DaZi_Desk02
+			Switch item=Lght_OG_DaZi_Desk03
+			Switch item=gDaniel
+			Switch item=gZocken
+}
 Frame label="Status" {
 Group item=grp_phcstatus label= "PHC Status"		
 }

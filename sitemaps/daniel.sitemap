@@ -1,0 +1,25 @@
+sitemap daniel label="Daniel's Zimmer"
+{
+
+Frame label="XCDS Control" {
+		
+			Text 	item=Sec_VOR_Tuer icon="frontdoor"
+            Text 	item=Sec_WIR_Tuer icon="door"
+			
+
+}
+Frame label="Gruppen" {            
+			Switch item=gDaniel
+			Switch item=gZocken
+}	
+Frame label="Schreibtisch" {		
+			Switch item=Lght_OG_DaZi_Desk01
+             item=Lght_OG_DaZi_Desk01
+			Switch item=Lght_OG_DaZi_Desk02
+            Slider item=Lght_OG_DaZi_Desk02
+			Switch item=Lght_OG_DaZi_Desk03
+            Slider item=Lght_OG_DaZi_Desk03
+
+
+}
+}

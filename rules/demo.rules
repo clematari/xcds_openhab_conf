@@ -29,7 +29,7 @@ end
 
 rule "Daniel Fenster change"
 when
-    Item Sec_Fenster_Daniel received update
+    Item Sec_EG_DanielFenster received update
 then
     Sec_EG_DanielFenster_lastupdate.postUpdate(new DateTimeType())
 end

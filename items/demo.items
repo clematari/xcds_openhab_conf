@@ -10,16 +10,22 @@ DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$t
 Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"      {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
 DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
-Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(de.map):%s]"{channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE_CONTACT"}
+Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(de.map):%s]"{channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE"}
 DateTime    Sec_EG_DanielFenster_lastupdate  "Daniel Fenster letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
 Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
 Switch      PHM_Garten  "Garten"                                {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:1#PRESS"}
 
 
-Dimmer Lght_Handy           "Handyladestation"   {channel="tradfri:0100:gwb8d7af2b6a9b:65543:brightness"}
+Dimmer Lght_Handy           "Handyladestation"                  {channel="tradfri:0100:gwb8d7af2b6a9b:65543:brightness"}
 Dimmer Lght_Stiegenkorp     "Stiegenkorpus"                    {channel="tradfri:0100:gwb8d7af2b6a9b:65547:brightness"}
 
+Group gDaniel "Schreibtisch Daniel"         ["Lighting"]
+Group gZocken "Computerlicht"               ["Lighting"]
+
+Dimmer Lght_OG_DaZi_Desk01  "Daniel Desk 01"    (gDaniel,gZocken)    ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65550:brightness"}
+Dimmer Lght_OG_DaZi_Desk02  "Daniel Desk 02"    (gDaniel)            ["Lighting"]   {channel="tradfri:0220:gwb8d7af2b6a9b:65551:brightness"}
+Dimmer Lght_OG_DaZi_Desk03  "Daniel Desk 03"    (gDaniel)            ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65552:brightness"}
 
 
 
