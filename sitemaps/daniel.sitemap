@@ -14,7 +14,7 @@ Frame label="Gruppen" {
 }	
 Frame label="Schreibtisch" {		
 			Switch item=Lght_OG_DaZi_Desk01
-             item=Lght_OG_DaZi_Desk01
+            Slider item=Lght_OG_DaZi_Desk01
 			Switch item=Lght_OG_DaZi_Desk02
             Slider item=Lght_OG_DaZi_Desk02
 			Switch item=Lght_OG_DaZi_Desk03

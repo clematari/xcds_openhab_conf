@@ -20,8 +20,8 @@ Switch      PHM_Garten  "Garten"                                {channel="homema
 Dimmer Lght_Handy           "Handyladestation"                  {channel="tradfri:0100:gwb8d7af2b6a9b:65543:brightness"}
 Dimmer Lght_Stiegenkorp     "Stiegenkorpus"                    {channel="tradfri:0100:gwb8d7af2b6a9b:65547:brightness"}
 
-Group gDaniel "Schreibtisch Daniel"         ["Lighting"]
-Group gZocken "Computerlicht"               ["Lighting"]
+Group:Dimmer:OR(ON,OFF) gDaniel "Schreibtisch Daniel"         ["Lighting"]
+Group:Dimmer:OR(ON,OFF) gZocken "Computerlicht"               ["Lighting"]
 
 Dimmer Lght_OG_DaZi_Desk01  "Daniel Desk 01"    (gDaniel,gZocken)    ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65550:brightness"}
 Dimmer Lght_OG_DaZi_Desk02  "Daniel Desk 02"    (gDaniel)            ["Lighting"]   {channel="tradfri:0220:gwb8d7af2b6a9b:65551:brightness"}
