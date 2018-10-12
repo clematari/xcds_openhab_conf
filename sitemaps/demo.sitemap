@@ -22,6 +22,15 @@ Frame label="XCDS Temp" {
 			Text item=MainroomTemperature	icon="temperature"
 
 }
+Frame label="XCDS Bewegung" {		
+			Text item=Mot_OUT_01 	icon="motion"
+			Text item=Mot_OUT_01_bright
+			Switch item=gGarten	
+		
+
+}
+
+
 Frame label="Daniel Zimmer" {
 			Switch item=Lght_OG_DaZi_Desk01
 			Switch item=Lght_OG_DaZi_Desk02
@@ -30,7 +39,8 @@ Frame label="Daniel Zimmer" {
 			Switch item=gZocken
 }
 Frame label="Status" {
-Group item=grp_phcstatus label= "PHC Status"		
+Group item=grp_phcstatus label= "PHC Status"
+	
 }
 Frame label="PHC AMD00"{
 		    

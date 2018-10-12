@@ -20,14 +20,15 @@ Switch      PHM_Garten  "Garten"                                {channel="homema
 Dimmer Lght_Handy           "Handyladestation"                  {channel="tradfri:0100:gwb8d7af2b6a9b:65543:brightness"}
 Dimmer Lght_Stiegenkorp     "Stiegenkorpus"                    {channel="tradfri:0100:gwb8d7af2b6a9b:65547:brightness"}
 
-Group:Dimmer:OR(ON,OFF) gDaniel "Schreibtisch Daniel"         ["Lighting"]
-Group:Dimmer:OR(ON,OFF) gZocken "Computerlicht"               ["Lighting"]
+Group:Dimmer:OR(ON,OFF) gDaniel "Schreibtisch Daniel"         
+Group:Dimmer:OR(ON,OFF) gZocken "Computerlicht"             
 
 Dimmer Lght_OG_DaZi_Desk01  "Daniel Desk 01"    (gDaniel,gZocken)    ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65550:brightness"}
 Dimmer Lght_OG_DaZi_Desk02  "Daniel Desk 02"    (gDaniel)            ["Lighting"]   {channel="tradfri:0220:gwb8d7af2b6a9b:65551:brightness"}
 Dimmer Lght_OG_DaZi_Desk03  "Daniel Desk 03"    (gDaniel)            ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65552:brightness"}
 
-
+Switch Mot_OUT_01 "BM Außen 01 [%s]"                     {channel="homematic:HM-Sen-MDIR-O-2:MEQ0006169:MEQ0102229:1#MOTION"}
+Number Mot_OUT_01_bright "BM Außen 01 Helligkeit"   {channel="homematic:HM-Sen-MDIR-O-2:MEQ0006169:MEQ0102229:1#BRIGHTNESS"}
 
 Switch Lght_EG_WIR_Spots    "WRaum Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/0:command:*:2], <[phcmqtt:phcstatus/amd/0/0:state:default]", autoupdate="false"}
 Switch Lght_EG_KUE_Spots    "Küche Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/1:command:*:2], <[phcmqtt:phcstatus/amd/0/1:state:default]", autoupdate="false"}

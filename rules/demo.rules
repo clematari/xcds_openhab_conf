@@ -52,6 +52,22 @@ then
      
 end
 
+rule "Bewegung Aussen 01 EIN"
+when
+    Item Mot_OUT_01 received update ON
+then
+    Lght_OUT_Holler.sendCommand(ON)
+
+end
+
+rule "Bewegung Aussen 01 AUS"
+when
+    Item Mot_OUT_01 received update OFF
+then
+   Lght_OUT_Holler.sendCommand(OFF)
+
+end
+
 /* ------------------------------------------ AMD MQTT update rules ------------------------------------------*/
 rule "AMD0 update"
 when 
