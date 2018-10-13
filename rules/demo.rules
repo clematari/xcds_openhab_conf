@@ -10,6 +10,8 @@ then
     publish ("phcmqtt","phc/amd/2/1","3")
     publish ("phcmqtt","phc/amd/3/1","3")
     publish ("phcmqtt","phc/amd/4/1","3")
+    publish ("phcmqtt","phc/dim/0/1","3")
+    publish ("phcmqtt","phc/dim/2/1","3")
 end
 
 
@@ -54,17 +56,29 @@ end
 
 rule "Bewegung Aussen 01 EIN"
 when
-    Item Mot_OUT_01 received update ON
+    Item Mot_OUT_01 received update ON 
 then
-    Lght_OUT_Holler.sendCommand(ON)
 
+    if  (Mot_OUT_01_bright.state < 60) {
+    Lght_OUT_Holler.sendCommand(ON)
+    Lght_OUT_Sonja.sendCommand(ON)
+    Lght_EG_HR_aussen.sendCommand(ON)
+    Lght_GA_Pergola.sendCommand(ON)
+    Lght_OUT_Zaun.sendCommand(ON)
+    }
 end
 
 rule "Bewegung Aussen 01 AUS"
 when
     Item Mot_OUT_01 received update OFF
 then
-   Lght_OUT_Holler.sendCommand(OFF)
+    if (Mot_OUT_01_bright.state < 60) {
+    Lght_OUT_Holler.sendCommand(OFF)
+    Lght_OUT_Sonja.sendCommand(OFF)
+    Lght_EG_HR_aussen.sendCommand(OFF)
+    Lght_GA_Pergola.sendCommand(OFF)
+    Lght_OUT_Zaun.sendCommand(OFF)
+    }
 
 end
 
@@ -244,4 +258,40 @@ then
    if (phc_int.bitwiseAnd(128) == 128) {
    Lght_EG_VOR_Korpus.postUpdate("ON")} else {Lght_EG_VOR_Korpus.postUpdate("OFF")} 
   */     
+end
+
+/* -------------------------------------------- DIMMER -------------------------------------------- */
+
+rule "DIM02 update"
+when 
+    Item PHC_DIM_02 received update
+then
+  
+   var Integer phc_int = Integer::parseInt(PHC_AMD_02.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Lght_OG_Daniel_Dim.postUpdate("ON")} else {Lght_OG_Daniel_Dim.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Lght_OG_Simon_Dim.postUpdate("ON")} else {Lght_OG_Simon_Dim.postUpdate("OFF")}
+
+
+end
+
+rule "DIM00 update"
+when 
+    Item PHC_DIM_00 received update
+then
+  
+   var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Lght_EG_Tisch_Dim.postUpdate("ON")} else {Lght_EG_Tisch_Dim.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Lght_EG_TVLicht_Dim.postUpdate("ON")} else {Lght_EG_TVLicht_Dim.postUpdate("OFF")}
+
+
 end

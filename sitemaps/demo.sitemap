@@ -22,12 +22,17 @@ Frame label="XCDS Temp" {
 			Text item=MainroomTemperature	icon="temperature"
 
 }
+
+Frame label="XCDS Dimmer" {		
+			Switch item=Lght_OG_Daniel_Dim
+			Switch item=Lght_OG_Simon_Dim
+
+}
+
 Frame label="XCDS Bewegung" {		
 			Text item=Mot_OUT_01 	icon="motion"
 			Text item=Mot_OUT_01_bright
 			Switch item=gGarten	
-		
-
 }
 
 
