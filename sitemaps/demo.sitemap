@@ -26,6 +26,8 @@ Frame label="XCDS Temp" {
 Frame label="XCDS Dimmer" {		
 			Switch item=Lght_OG_Daniel_Dim
 			Switch item=Lght_OG_Simon_Dim
+			Switch item=Lght_EG_Tisch_Dim 
+			Switch item=Lght_EG_TVLicht_Dim 
 
 }
 

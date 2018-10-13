@@ -76,8 +76,8 @@ Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmq
 Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
 
 
-Switch Lght_EG_Tisch        "Tisch"                  ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
-Switch Lght_EG_TVLicht      "TV Licht"               ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
+Switch Lght_EG_Tisch_Dim       "Tisch"                  ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
+Switch Lght_EG_TVLicht_Dim      "TV Licht"               ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
 Switch Lght_OG_Daniel_Dim   "Daniel Mitte"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/2/0:command:*:2], <[phcmqtt:phcstatus/dim/2/0:state:default]" , autoupdate="false"}
 Switch Lght_OG_Simon_Dim    "Simon Mitte"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/2/1:command:*:2], <[phcmqtt:phcstatus/dim/2/1:state:default]" , autoupdate="false"}
 
@@ -114,7 +114,7 @@ String PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus) { mqtt="<
 String PHC_AMD_03           "PHC Modul AMD 03 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/3:state:default]"}
 String PHC_AMD_04           "PHC Modul AMD 04 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/4:state:default]"}
 String PHC_DIM_00           "PHC Modul DIM 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
-String PHC_DIM_01           "PHC Modul DIM 01 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
+String PHC_DIM_02           "PHC Modul DIM 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
 
 String PHC_Status           "PHC Status [%d]"
 

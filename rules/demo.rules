@@ -288,7 +288,7 @@ then
   
      
    if (phc_int.bitwiseAnd(1) == 1) {
-         Lght_EG_Tisch_Dim.postUpdate("ON")} else {Lght_EG_Tisch_Dim.postUpdate("OFF")}
+        Lght_EG_Tisch_Dim.postUpdate("ON")} else {Lght_EG_Tisch_Dim.postUpdate("OFF")}
        
     if (phc_int.bitwiseAnd(2) == 2) {
       Lght_EG_TVLicht_Dim.postUpdate("ON")} else {Lght_EG_TVLicht_Dim.postUpdate("OFF")}
