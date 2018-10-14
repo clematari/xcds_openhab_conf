@@ -40,7 +40,7 @@ Switch Lght_OG_SiZi02       "Simon Leselicht"       ["Lighting"] { mqtt=">[phcmq
 Switch Plug_EG_WZ_Lichtl    "Strom Lichtleiste"     ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/6:command:*:2], <[phcmqtt:phcstatus/amd/0/6:state:default]", autoupdate="false"}
 Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/7:command:*:2], <[phcmqtt:phcstatus/amd/0/7:state:default]", autoupdate="false"}
 
-Switch Lght_EG_HOF          "Hoflampe"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/0:command:*:2], <[phcmqtt:phcstatus/amd/1/0:state:default]" , autoupdate="false"}
+Switch Lght_EG_HOF          "Hoflampe"    (gGarten) ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/0:command:*:2], <[phcmqtt:phcstatus/amd/1/0:state:default]" , autoupdate="false"}
 Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/1:command:*:2], <[phcmqtt:phcstatus/amd/1/1:state:default]" , autoupdate="false"}
 Switch Lght_EG_KUE_Aplatte  "Küche Arbeitsplatte"   ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/2:command:*:2], <[phcmqtt:phcstatus/amd/1/2:state:default]" , autoupdate="false"}
 Switch Lght_EG_KUE_Bar      "Küche Bar"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/3:command:*:2], <[phcmqtt:phcstatus/amd/1/3:state:default]" , autoupdate="false"}
@@ -76,8 +76,8 @@ Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmq
 Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
 
 
-Switch Lght_EG_Tisch_Dim       "Tisch"                  ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
-Switch Lght_EG_TVLicht_Dim      "TV Licht"               ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
+Switch Lght_EG_Tisch_Dim       "EG Tisch"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
+Switch Lght_EG_TVLicht_Dim      "TV Light"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
 Switch Lght_OG_Daniel_Dim   "Daniel Mitte"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/2/0:command:*:2], <[phcmqtt:phcstatus/dim/2/0:state:default]" , autoupdate="false"}
 Switch Lght_OG_Simon_Dim    "Simon Mitte"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/2/1:command:*:2], <[phcmqtt:phcstatus/dim/2/1:state:default]" , autoupdate="false"}
 
@@ -110,7 +110,7 @@ Switch tas_Dual01_2         "Tasmota Dual 01.2"    ["Lighting"] { mqtt=">[phcmqt
 Group grp_phcstatus
 String PHC_AMD_00           "PHC Modul AMD 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/0:state:default]"}
 String PHC_AMD_01           "PHC Modul AMD 01 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/1:state:default]"}
-String PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus) { mqtt="<[phcmqtt:phcstatus/amdstatus/2:state:default]"}
+String PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/2:state:default]"}
 String PHC_AMD_03           "PHC Modul AMD 03 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/3:state:default]"}
 String PHC_AMD_04           "PHC Modul AMD 04 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/4:state:default]"}
 String PHC_DIM_00           "PHC Modul DIM 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
