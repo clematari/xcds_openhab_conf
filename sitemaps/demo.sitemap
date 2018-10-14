@@ -49,6 +49,11 @@ Frame label="Status" {
 Group item=grp_phcstatus label= "PHC Status"
 	
 }
+
+Frame label="Status Garten" {
+Group item=gGarten label= "Gruppe Garten"
+	
+}
 Frame label="PHC AMD00"{
 		    
 			Switch 	item=Lght_EG_WIR_Spots
