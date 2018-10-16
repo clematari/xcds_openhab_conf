@@ -23,12 +23,15 @@ Frame label="XCDS Temp" {
 
 }
 
-Frame label="XCDS Dimmer" {		
+Frame label="XCDS Dimmer2" {		
 			Switch item=Lght_OG_Daniel_Dim
 			Switch item=Lght_OG_Simon_Dim
-			Switch item=Lght_EG_Tisch_Dim 
-			Switch item=Lght_EG_TVLicht_Dim 
+}
 
+Frame label="XCDS Dimmer3" {	
+			Switch item=Lght_EG_TVLicht_Dim 	
+			Switch item=Lght_EG_Tisch_Dim 
+			
 }
 
 Frame label="XCDS Bewegung" {		
@@ -42,6 +45,7 @@ Frame label="Daniel Zimmer" {
 			Switch item=Lght_OG_DaZi_Desk01
 			Switch item=Lght_OG_DaZi_Desk02
 			Switch item=Lght_OG_DaZi_Desk03
+			Switch item=Lght_OG_DaZi_Desk04
 			Switch item=gDaniel
 			Switch item=gZocken
 }

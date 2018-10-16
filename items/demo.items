@@ -27,6 +27,7 @@ Group:Switch:OR(ON,OFF) gGarten "Gartenbeleuchtung"
 Dimmer Lght_OG_DaZi_Desk01  "Daniel Desk 01"    (gDaniel,gZocken)    ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65550:brightness"}
 Dimmer Lght_OG_DaZi_Desk02  "Daniel Desk 02"    (gDaniel)            ["Lighting"]   {channel="tradfri:0220:gwb8d7af2b6a9b:65551:brightness"}
 Dimmer Lght_OG_DaZi_Desk03  "Daniel Desk 03"    (gDaniel)            ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65552:brightness"}
+Dimmer Lght_OG_DaZi_Desk04  "Daniel Desk 04"    (gDaniel)            ["Lighting"]   {channel="tradfri:0100:gwb8d7af2b6a9b:65553:brightness"}
 
 Switch Mot_OUT_01 "BM Außen 01 [%s]"                     {channel="homematic:HM-Sen-MDIR-O-2:MEQ0006169:MEQ0102229:1#MOTION"}
 Number Mot_OUT_01_bright "BM Außen 01 Helligkeit"   {channel="homematic:HM-Sen-MDIR-O-2:MEQ0006169:MEQ0102229:1#BRIGHTNESS"}
