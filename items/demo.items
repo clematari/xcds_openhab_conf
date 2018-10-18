@@ -1,8 +1,8 @@
 
 
-Number outTemp              "Außentemperatur [%.1f °C]" ["CurrentTemperature"] { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
-Number BedroomTemperature   "Schlafzimmer [%.1f °C]"   ["CurrentTemperature"] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
-Number MainroomTemperature  "Wohnzimmer [%.1f °C]"  ["CurrentTemperature"]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
+Number outTemp              "Luft Temperatur [%.1f °C]" [ "CurrentTemperature "] { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
+Number BedroomTemperature   "Schlafzimmer Temperatur [%.1f °C]"   [ "CurrentTemperature" ] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
+Number MainroomTemperature  "Wohnzimmer Temperatur [%.1f °C]"  [ "CurrentTemperature" ]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 
 Contact     Sec_WIR_Tuer   "Wirtschaftsraum [MAP(de.map):%s]"     {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
 DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
@@ -10,7 +10,7 @@ DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$t
 Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"      {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
 DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
-Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(de.map):%s]"{channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE"}
+Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(fenster.map):%s]"{channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE_CONTACT"}
 DateTime    Sec_EG_DanielFenster_lastupdate  "Daniel Fenster letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
 Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
@@ -114,10 +114,10 @@ String PHC_AMD_01           "PHC Modul AMD 01 [%d]"    (grp_phcstatus)  { mqtt="
 String PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/2:state:default]"}
 String PHC_AMD_03           "PHC Modul AMD 03 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/3:state:default]"}
 String PHC_AMD_04           "PHC Modul AMD 04 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/4:state:default]"}
-String PHC_DIM_00           "PHC Modul DIM 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
-String PHC_DIM_02           "PHC Modul DIM 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
+String PHC_DIM_00           "PHC Modul DIM 00 [%d]"     { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
+String PHC_DIM_02           "PHC Modul DIM 02 [%d]"      { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
 
-String PHC_Status           "PHC Status [%d]"
+
 
 /*nicht sicher, ob die funktionieren 
 Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/7:command:*:2], >[phcmqtt:phc/amd/0/7:command:OFF:0]" }

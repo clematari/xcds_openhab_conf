@@ -6,43 +6,63 @@ when
     Time cron "0 0/2 * * * ?" 
 then
 /**/
-    publish ("phcmqtt","phc/amd/0/1","3")
-    Thread::sleep(20)
-    publish ("phcmqtt","phc/amd/1/1","3")
-    Thread::sleep(20)
-    publish ("phcmqtt","phc/amd/2/1","3")
-    Thread::sleep(20)
-    publish ("phcmqtt","phc/amd/3/1","3")
-    Thread::sleep(20)
-    publish ("phcmqtt","phc/amd/4/1","3")
-    Thread::sleep(40)
     publish ("phcmqtt","phc/dim/0/1","3")
-    Thread::sleep(40)
-    publish ("phcmqtt","phc/dim/2/0","3")
+   
+    publish ("phcmqtt","phc/amd/0/1","3")
+    
+    publish ("phcmqtt","phc/amd/1/1","3")
+   
+    publish ("phcmqtt","phc/amd/2/1","3")
+  
+    publish ("phcmqtt","phc/amd/3/1","3")
+   
+    publish ("phcmqtt","phc/amd/4/1","3")
+ 
+    publish ("phcmqtt","phc/dim/2/1","3")
 
 /**/
 end
 
+rule "DIM02 update"
+when 
+    Item PHC_DIM_02 changed 
+then
+  
+   var Integer phc_int_1 = Integer::parseInt(PHC_DIM_02.state.toString)
+  
+     
+   if (phc_int_1.bitwiseAnd(1) == 1) {
+         Lght_OG_Daniel_Dim.postUpdate("ON")} else {Lght_OG_Daniel_Dim.postUpdate("OFF")}
+       
+    if (phc_int_1.bitwiseAnd(2) == 2) {
+      Lght_OG_Simon_Dim.postUpdate("ON")} else {Lght_OG_Simon_Dim.postUpdate("OFF")}
+
+
+end
 
 rule "WRAUM Türe change"
 when
-    Item Sec_WIR_Tuer received update 
+    Item Sec_WIR_Tuer changed 
 then
     Sec_WIR_Tuer_lastupdate.postUpdate(new DateTimeType())
+    sendNotification("clemens.schmid@xcds.at", "( " + Sec_WIR_Tuer.state.toString+" ) Wirtschaftsraumtüre")
 end
 
 rule "VORZ Türe change"
 when
-    Item Sec_VOR_Tuer received update
+    Item Sec_VOR_Tuer changed
 then
     Sec_VOR_Tuer_lastupdate.postUpdate(new DateTimeType())
+    sendNotification("clemens.schmid@xcds.at", "( " + Sec_VOR_Tuer.state.toString+" ) Eingangstüre")
+    
 end
 
 rule "Daniel Fenster change"
 when
-    Item Sec_EG_DanielFenster received update
+    Item Sec_EG_DanielFenster changed
 then
     Sec_EG_DanielFenster_lastupdate.postUpdate(new DateTimeType())
+    sendNotification("clemens.schmid@xcds.at", "( " + Sec_EG_DanielFenster.state.toString+" ) Daniel Fenster")
 end
 
 rule "DB Funkschalter EIN"
@@ -95,13 +115,12 @@ end
 /* ------------------------------------------ AMD MQTT update rules ------------------------------------------*/
 rule "AMD0 update"
 when 
-    Item PHC_AMD_00 received update
+    Item PHC_AMD_00 changed
 then
 
  /* var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
  */
-  PHC_Status.postUpdate(PHC_AMD_00.state.toString)
-
+  
   var Integer phc_int = Integer::parseInt(PHC_AMD_00.state.toString)
   
      
@@ -135,7 +154,7 @@ end
 
 rule "AMD01 update"
 when 
-    Item PHC_AMD_01 received update
+    Item PHC_AMD_01 changed
 then
   
    var Integer phc_int = Integer::parseInt(PHC_AMD_01.state.toString)
@@ -170,7 +189,7 @@ end
 
 rule "AMD02 update"
 when 
-    Item PHC_AMD_02 received update
+    Item PHC_AMD_02 changed
 then
   
    var Integer phc_int = Integer::parseInt(PHC_AMD_02.state.toString)
@@ -204,7 +223,7 @@ end
 
 rule "AMD03 update"
 when 
-    Item PHC_AMD_03 received update
+    Item PHC_AMD_03 changed
 then
   
    var Integer phc_int = Integer::parseInt(PHC_AMD_03.state.toString)
@@ -238,7 +257,7 @@ end
 
 rule "AMD04 update"
 when 
-    Item PHC_AMD_04 received update
+    Item PHC_AMD_04 changed
 then
   
    var Integer phc_int = Integer::parseInt(PHC_AMD_04.state.toString)
@@ -274,32 +293,32 @@ end
 
 rule "DIM00 update"
 when 
-    Item PHC_DIM_00 received update
+    Item PHC_DIM_00 changed
 then
   
-   var Integer phc_int = Integer::parseInt(PHC_DIM_00.state.toString)
+   var Integer phc_int_2 = Integer::parseInt(PHC_DIM_00.state.toString)
   
      
-   if (phc_int.bitwiseAnd(1) == 1) {
+   if (phc_int_2.bitwiseAnd(1) == 1) {
         Lght_EG_Tisch_Dim.postUpdate("ON")} else {Lght_EG_Tisch_Dim.postUpdate("OFF")}
        
-    if (phc_int.bitwiseAnd(2) == 2) {
+    if (phc_int_2.bitwiseAnd(2) == 2) {
       Lght_EG_TVLicht_Dim.postUpdate("ON")} else {Lght_EG_TVLicht_Dim.postUpdate("OFF")}
 end
 
 
 rule "DIM02 update"
 when 
-    Item PHC_DIM_02 received update
+    Item PHC_DIM_02 changed 
 then
   
-   var Integer phc_int = Integer::parseInt(PHC_DIM_02.state.toString)
+   var Integer phc_int_1 = Integer::parseInt(PHC_DIM_02.state.toString)
   
      
-   if (phc_int.bitwiseAnd(1) == 1) {
+   if (phc_int_1.bitwiseAnd(1) == 1) {
          Lght_OG_Daniel_Dim.postUpdate("ON")} else {Lght_OG_Daniel_Dim.postUpdate("OFF")}
        
-    if (phc_int.bitwiseAnd(2) == 2) {
+    if (phc_int_1.bitwiseAnd(2) == 2) {
       Lght_OG_Simon_Dim.postUpdate("ON")} else {Lght_OG_Simon_Dim.postUpdate("OFF")}
 
 

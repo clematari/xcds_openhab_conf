@@ -1,4 +1,4 @@
 CLOSED=geschlossen
 OPEN=offen
 NULL=undefiniert
--=undefiniert
+"-"=undefiniert
