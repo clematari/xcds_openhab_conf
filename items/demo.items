@@ -4,18 +4,18 @@ Number outTemp              "Luft Temperatur [%.1f °C]" [ "CurrentTemperature "
 Number BedroomTemperature   "Schlafzimmer Temperatur [%.1f °C]"   [ "CurrentTemperature" ] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer Temperatur [%.1f °C]"  [ "CurrentTemperature" ]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 
-Contact     Sec_WIR_Tuer   "Wirtschaftsraum [MAP(de.map):%s]"     {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
+Contact     Sec_WIR_Tuer   "Wirtschaftsraum [MAP(de.map):%s]"  (grp_contact)   {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
 DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
-Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"      {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
+Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"   (grp_contact)   {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
 DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
-Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(fenster.map):%s]"{channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE_CONTACT"}
+Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(fenster.map):%s]" (grp_contact) {channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE_CONTACT"}
 DateTime    Sec_EG_DanielFenster_lastupdate  "Daniel Fenster letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
-Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
+/*Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
 Switch      PHM_Garten  "Garten"                                {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:1#PRESS"}
-
+*/
 
 Dimmer Lght_Handy           "Handyladestation"                  {channel="tradfri:0100:gwb8d7af2b6a9b:65543:brightness"}
 Dimmer Lght_Stiegenkorp     "Stiegenkorpus"                    {channel="tradfri:0100:gwb8d7af2b6a9b:65547:brightness"}
@@ -69,13 +69,18 @@ Switch Lght_NixWissen35   "unbekannt"               ["Lighting"] { mqtt=">[phcmq
 Switch Lght_OG_VOR_Mitte  "OG Vorzimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/6:command:*:2], <[phcmqtt:phcstatus/amd/3/6:state:default]" , autoupdate="false"}
 Switch Lght_EG_VOR_Korpus "Handykorpus"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/7:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
 
-Switch Lght_DB_STG          "Stiege DB"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/0:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
-Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
-Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:*:2],<[phcmqtt:phcstatus/amd/3/7:state:default]", autoupdate="false"}
-Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/3:command:*:2],<[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
-Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmqtt:phc/amd/4/4:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
-Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
+Switch Lght_DB_STG          "Stiege DB"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/0:command:*:2], <[phcmqtt:phcstatus/amd/4/0:state:default]" , autoupdate="false"}
+Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:*:2], <[phcmqtt:phcstatus/amd/4/1:state:default]" , autoupdate="false"}
+Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:*:2],<[phcmqtt:phcstatus/amd/4/2:state:default]", autoupdate="false"}
+Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/3:command:*:2],<[phcmqtt:phcstatus/amd/4/3:state:default]" , autoupdate="false"}
+Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmqtt:phc/amd/4/4:command:*:2], <[phcmqtt:phcstatus/amd/4/4:state:default]" , autoupdate="false"}
+Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/4/5:state:default]" , autoupdate="false"}
 
+Group grp_contact
+Switch Cont_WraumFenster    "WRaum Fenster  [MAP(contact.map):%s] "  (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/0:state:default]"}
+Switch Cont_Schiebetuer     "Schiebetür [MAP(contact.map):%s]"       (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/5:state:default]"}
+Switch Cont_Schrankr        "Schrankraum [MAP(contact.map):%s]"      (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/1:state:default]"}
+Switch Cont_Schlafzimmer    "Schlafzimmer [MAP(contact.map):%s]"     (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/4:state:default]"}
 
 Switch Lght_EG_Tisch_Dim       "EG Tisch"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
 Switch Lght_EG_TVLicht_Dim      "TV Light"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
@@ -114,8 +119,9 @@ String PHC_AMD_01           "PHC Modul AMD 01 [%d]"    (grp_phcstatus)  { mqtt="
 String PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/2:state:default]"}
 String PHC_AMD_03           "PHC Modul AMD 03 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/3:state:default]"}
 String PHC_AMD_04           "PHC Modul AMD 04 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/4:state:default]"}
-String PHC_DIM_00           "PHC Modul DIM 00 [%d]"     { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
-String PHC_DIM_02           "PHC Modul DIM 02 [%d]"      { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
+String PHC_AMD_05           "PHC Modul AMD 05 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/5:state:default]"}
+String PHC_DIM_00           "PHC Modul DIM 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
+String PHC_DIM_02           "PHC Modul DIM 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
 
 
 

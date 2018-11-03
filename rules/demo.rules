@@ -89,8 +89,8 @@ when
 then
 
     if  (Mot_OUT_01_bright.state < 60) {
-        if (Lght_EG_HOF.state == "OFF") {Lght_EG_HOF.sendCommand(ON)}
-        if (Lght_EG_HR_aussen.state == "OFF") { Lght_EG_HR_aussen.sendCommand(ON)}
+        if (Lght_EG_HOF.state == OFF ) {Lght_EG_HOF.sendCommand(ON)}
+        if (Lght_EG_HR_aussen.state == OFF) { Lght_EG_HR_aussen.sendCommand(ON)}
         Lght_OUT_Holler.sendCommand(ON)
         Lght_OUT_Sonja.sendCommand(ON)
         Lght_GA_Pergola.sendCommand(ON)
@@ -102,10 +102,10 @@ rule "Bewegung Aussen 01 AUS"
 when
     Item Mot_OUT_01 received update OFF
 then
-        if (Lght_EG_HOF.state == "ON") {Lght_EG_HOF.sendCommand(OFF)}
+        if (Lght_EG_HOF.state == ON) {Lght_EG_HOF.sendCommand(OFF)}
         Lght_OUT_Holler.sendCommand(OFF)
         Lght_OUT_Sonja.sendCommand(OFF)
-        if (Lght_EG_HR_aussen.state == "ON") { Lght_EG_HR_aussen.sendCommand(OFF)}
+        if (Lght_EG_HR_aussen.state == ON) { Lght_EG_HR_aussen.sendCommand(OFF)}
         Lght_GA_Pergola.sendCommand(OFF)
         Lght_OUT_Zaun.sendCommand(OFF)
     
@@ -287,6 +287,42 @@ then
    if (phc_int.bitwiseAnd(128) == 128) {
    Lght_EG_VOR_Korpus.postUpdate("ON")} else {Lght_EG_VOR_Korpus.postUpdate("OFF")} 
   */     
+end
+
+rule "AMD05 update"
+when 
+    Item PHC_AMD_05 changed
+then
+  
+   var Integer phc_int = Integer::parseInt(PHC_AMD_05.state.toString)
+  
+     
+   if (phc_int.bitwiseAnd(1) == 1) {
+         Cont_WraumFenster.postUpdate("ON")} else {Cont_WraumFenster.postUpdate("OFF")}
+ 
+    if (phc_int.bitwiseAnd(2) == 2) {
+      Cont_Schrankr.postUpdate("ON")} else {Cont_Schrankr.postUpdate("OFF")}
+
+  /*  if (phc_int.bitwiseAnd(4) == 4) {
+      Lght_DB_Vorne.postUpdate("ON")} else {Lght_DB_Vorne.postUpdate("OFF")}
+       
+ 
+   if (phc_int.bitwiseAnd(8) == 8) {
+     Lght_DB_Mitte.postUpdate("ON")} else {Lght_DB_Mitte.postUpdate("OFF")}
+ */
+    if (phc_int.bitwiseAnd(16) == 16) {
+     Cont_Schlafzimmer.postUpdate("ON")} else {Cont_Schlafzimmer.postUpdate("OFF")}
+       
+    if (phc_int.bitwiseAnd(32) == 32) {
+   Cont_Schiebetuer.postUpdate("ON")} else {Cont_Schiebetuer.postUpdate("OFF")}
+/*
+     if (phc_int.bitwiseAnd(64) == 64) {
+    Lght_OG_VOR_Mitte.postUpdate("ON")} else {Lght_OG_VOR_Mitte.postUpdate("OFF")}      
+          
+   if (phc_int.bitwiseAnd(128) == 128) {
+   Lght_EG_VOR_Korpus.postUpdate("ON")} else {Lght_EG_VOR_Korpus.postUpdate("OFF")} 
+  */     
+  
 end
 
 /* -------------------------------------------- DIMMER -------------------------------------------- */
