@@ -2,3 +2,5 @@ OFF=geschlossen
 ON=offen
 NULL=unbekannt
 -=unbekannt
+CLOSED=geschlossen
+OPEN=offen

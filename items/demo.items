@@ -13,7 +13,7 @@ DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$td.%1$tm.
 Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(fenster.map):%s]" (grp_contact) {channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE_CONTACT"}
 DateTime    Sec_EG_DanielFenster_lastupdate  "Daniel Fenster letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
-Contact     Sec_HeizR_Tuer  "Heizraum [MAP(contact.map):%s]"  (grp_contact)   {channel="homematic:HmIP-SWDO-I:MEQ0006169:00109709AAA3EA:1#STATE"}
+String      Sec_HeizR_Tuer  "Heizraum [MAP(contact.map):%s]"  (grp_contact)   {channel="homematic:HmIP-SWDO-I:MEQ0006169:00109709AAA3EA:1#STATE"}
 DateTime    Sec_HeizR_Tuer_lastupdate   "Heizraum Tür letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
 
 /*Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
