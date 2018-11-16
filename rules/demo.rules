@@ -17,6 +17,8 @@ then
     publish ("phcmqtt","phc/amd/3/1","3")
    
     publish ("phcmqtt","phc/amd/4/1","3")
+
+    publish ("phcmqtt","phc/amd/5/1","3")
  
     publish ("phcmqtt","phc/dim/2/1","3")
 
@@ -63,6 +65,14 @@ when
 then
     Sec_EG_DanielFenster_lastupdate.postUpdate(new DateTimeType())
     sendNotification("clemens.schmid@xcds.at", "( " + Sec_EG_DanielFenster.state.toString+" ) Daniel Fenster")
+end
+
+rule "Heizraum Türe change"
+when
+    Item Sec_HeizR_Tuer changed
+then
+    Sec_HeizR_Tuer_lastupdate.postUpdate(new DateTimeType())
+    sendNotification("clemens.schmid@xcds.at", "( " + Sec_HeizR_Tuer.state.toString+" ) Heizraumtüre")
 end
 
 rule "DB Funkschalter EIN"

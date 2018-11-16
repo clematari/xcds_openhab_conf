@@ -12,8 +12,11 @@ Frame label="XCDS Control" {
 			Text 	item=Sec_WIR_Tuer icon="door"
 			Text 	item=Sec_WIR_Tuer_lastupdate icon="calendar"
 
-			Text 	item=Sec_EG_DanielFenster icon="door"
+			Text 	item=Sec_EG_DanielFenster icon="window"
 			Text 	item=Sec_EG_DanielFenster_lastupdate icon="calendar"
+
+			Text 	item=Sec_HeizR_Tuer icon="door"
+			Text 	item=Sec_HeizR_Tuer_lastupdate icon="calendar"
 
 }	
 Frame label="XCDS Temp" {		
