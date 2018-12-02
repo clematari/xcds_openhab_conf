@@ -25,11 +25,13 @@ Frame label="XCDS Temp" {
 			Text item=MainroomTemperature	icon="temperature"
 			Text item=GarageTemperature		icon="temperature"
 			Text item=HeizraumTemperature	icon="temperature"
-			
+}
+Frame label="Heizung" {
+			Text item=Kesselstatus 			icon="heating"
 			Text item=HK1Temperature		icon="temperature"
 			Text item=HK1SollTemperature	icon="temperature"
 			Text item=BoilerTemperature		icon="temperature"
-			Text item=HK1Temperature		icon="temperature"
+			Text item=KesselTemperature		icon="temperature"
 
 }
 
