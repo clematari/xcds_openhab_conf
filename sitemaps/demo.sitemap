@@ -23,7 +23,7 @@ Frame label="XCDS Temp" {
 			Text item=outTemp 				icon="climate-on"
 			Text item=BedroomTemperature	icon="temperature"
 			Text item=MainroomTemperature	icon="temperature"
-			Text item=GarageTemperature      icon="temperature"
+			Text item=GarageTemperature		icon="temperature"
 
 }
 
