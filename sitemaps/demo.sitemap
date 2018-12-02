@@ -24,6 +24,12 @@ Frame label="XCDS Temp" {
 			Text item=BedroomTemperature	icon="temperature"
 			Text item=MainroomTemperature	icon="temperature"
 			Text item=GarageTemperature		icon="temperature"
+			Text item=HeizraumTemperature	icon="temperature"
+			
+			Text item=HK1Temperature		icon="temperature"
+			Text item=HK1SollTemperature	icon="temperature"
+			Text item=BoilerTemperature		icon="temperature"
+			Text item=HK1Temperature		icon="temperature"
 
 }
 

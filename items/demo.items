@@ -4,7 +4,12 @@ Number outTemp              "Luft Temperatur [%.1f °C]" [ "CurrentTemperature "
 Number BedroomTemperature   "Schlafzimmer Temperatur [%.1f °C]"   [ "CurrentTemperature" ] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer Temperatur [%.1f °C]"  [ "CurrentTemperature" ]    { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 Number GarageTemperature "Garage Temperatur [%.1f °C]" [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/sonoffTH16/tele/SENSOR:state:JSONPATH($.DS18B20.Temperature)]" }
+Number HeizraumTemperature "Heizraum Temperatur [%.1f °C]" [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/nodemcu/tele/SENSOR:state:JSONPATH($.DS18S20.Temperature)]" }
 
+Number HK1Temperature "Heizkreis [%.1f °C]" [ "CurrentTemperature" ] { http="<[http://10.0.0.111:30000:REGEX(.*?<Temp_HK1_ist>(.*?)</Temp_HK1_ist>.*)]"}
+Number BoilerTemperature "Boiler [%.1f °C]" [ "CurrentTemperature" ] { http="<[http://10.0.0.111:30000:REGEX(.*?<Temp_Boiler>(.*?)</Temp_Boiler>.*)]"}
+Number KesselTemperature "Kessel [%.1f °C]" [ "CurrentTemperature" ] { http="<[http://10.0.0.111:30000:REGEX(.*?<Temp_Kessel>(.*?)</Temp_Kessel>.*)]"}
+Number HK1SollTemperature "HK Soll [%.1f °C]" [ "CurrentTemperature" ] { http="<[http://10.0.0.111:30000:REGEX(.*?<Temp_HK1_soll>(.*?)</Temp_HK1_soll>.*)]"}
 
 Contact     Sec_WIR_Tuer   "Wirtschaftsraum [MAP(de.map):%s]"  (grp_contact)   {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
 DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
