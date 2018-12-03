@@ -5,7 +5,7 @@ Number MainroomTemperature  "Wohnzimmer Temperatur [%.1f °C]"       (gTemp) [ "
 Number GarageTemperature "Garage Temperatur [%.1f °C]"              (gTemp) [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/sonoffTH16/tele/SENSOR:state:JSONPATH($.DS18B20.Temperature)]" }
 Number HeizraumTemperature "Heizraum Temperatur [%.1f °C]"          (gTemp) [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/nodemcu/tele/SENSOR:state:JSONPATH($.DS18S20.Temperature)]" }
 
-Number Kesselstatus "Kesselstatus [MAP(hargassner.map):%f]"         (gTemp) { http="<[http://10.0.0.111:300000:REGEX(.*?<Kesselstatus>(.*?)</Kesselstatus>.*)]"}
+Number Kesselstatus "Kesselstatus [MAP(hargassner.map):%.0f]"         (gTemp) { http="<[http://10.0.0.111:300000:REGEX(.*?<Kesselstatus>(.*?)</Kesselstatus>.*)]"}
 Number HK1Temperature "Heizkreis [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_HK1_ist>(.*?)</Temp_HK1_ist>.*)]"}
 Number BoilerTemperature "Boiler [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_Boiler>(.*?)</Temp_Boiler>.*)]"}
 Number KesselTemperature "Kessel [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_Kessel>(.*?)</Temp_Kessel>.*)]"}
