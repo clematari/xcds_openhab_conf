@@ -1,27 +1,29 @@
 Group  gTemp
+Group gCAM_OUT
 Number outTemp "Luft Temperatur [%.1f °C]"                          (gTemp) [ "CurrentTemperature "] { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
 Number BedroomTemperature   "Schlafzimmer Temperatur [%.1f °C]"     (gTemp) [ "CurrentTemperature" ] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer Temperatur [%.1f °C]"       (gTemp) [ "CurrentTemperature" ] { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
 Number GarageTemperature "Garage Temperatur [%.1f °C]"              (gTemp) [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/sonoffTH16/tele/SENSOR:state:JSONPATH($.DS18B20.Temperature)]" }
 Number HeizraumTemperature "Heizraum Temperatur [%.1f °C]"          (gTemp) [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/nodemcu/tele/SENSOR:state:JSONPATH($.DS18S20.Temperature)]" }
 
-Number Kesselstatus "Kesselstatus [MAP(hargassner.map):%.0f]"         (gTemp) { http="<[http://10.0.0.111:300000:REGEX(.*?<Kesselstatus>(.*?)</Kesselstatus>.*)]"}
+Number Kesselstatus "Kesselstatus [MAP(hargassner.map):%.0f]"       (gTemp) { http="<[http://10.0.0.111:300000:REGEX(.*?<Kesselstatus>(.*?)</Kesselstatus>.*)]"}
+DateTime Kesselstatus_lastupdate  "Heizung letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" (gTemp)
 Number HK1Temperature "Heizkreis [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_HK1_ist>(.*?)</Temp_HK1_ist>.*)]"}
 Number BoilerTemperature "Boiler [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_Boiler>(.*?)</Temp_Boiler>.*)]"}
 Number KesselTemperature "Kessel [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_Kessel>(.*?)</Temp_Kessel>.*)]"}
 Number HK1SollTemperature "HK Soll [%.1f °C]"                       (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_HK1_soll>(.*?)</Temp_HK1_soll>.*)]"}
 
 Contact     Sec_WIR_Tuer   "Wirtschaftsraum [MAP(de.map):%s]"  (grp_contact)   {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:1#STATE"}
-DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
+DateTime    Sec_WIR_Tuer_lastupdate  "Wirtschaftsraum letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" (grp_contact)
 
 Contact     Sec_VOR_Tuer    "Eingangstüre [MAP(de.map):%s]"   (grp_contact)   {channel="homematic:HM-SCI-3-FM:MEQ0006169:OEQ1017766:2#STATE"}
-DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
+DateTime    Sec_VOR_Tuer_lastupdate  "Eingangstüre letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" (grp_contact)
 
 Contact     Sec_EG_DanielFenster    "Fenster Daniel [MAP(fenster.map):%s]" (grp_contact) {channel="homematic:HMIP-SWDO:MEQ0006169:0000D70995660B:1#STATE_CONTACT"}
-DateTime    Sec_EG_DanielFenster_lastupdate  "Daniel Fenster letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
+DateTime    Sec_EG_DanielFenster_lastupdate  "Daniel Fenster letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" (grp_contact)
 
 String      Sec_HeizR_Tuer  "Heizraum [MAP(contact.map):%s]"  (grp_contact)   {channel="homematic:HmIP-SWDO-I:MEQ0006169:00109709AAA3EA:1#STATE"}
-DateTime    Sec_HeizR_Tuer_lastupdate   "Heizraum Tür letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"
+DateTime    Sec_HeizR_Tuer_lastupdate   "Heizraum Tür letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" (grp_contact)
 
 /*Switch      Sec_Allesaus  "Allesaus_ein"                        {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:2#PRESS_LONG"}
 Switch      PHM_Garten  "Garten"                                {channel="homematic:HM-PBI-4-FM:MEQ0006169:LEQ1001110:1#PRESS"}
@@ -42,14 +44,14 @@ Dimmer Lght_OG_DaZi_Desk04  "Daniel Desk 04"    (gDaniel)            ["Lighting"
 Switch Mot_OUT_01 "BM Außen 01 [%s]"                     {channel="homematic:HM-Sen-MDIR-O-2:MEQ0006169:MEQ0102229:1#MOTION"}
 Number Mot_OUT_01_bright "BM Außen 01 Helligkeit"   {channel="homematic:HM-Sen-MDIR-O-2:MEQ0006169:MEQ0102229:1#BRIGHTNESS"}
 
-Switch Lght_EG_WIR_Spots    "WRaum Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/0:command:*:2], <[phcmqtt:phcstatus/amd/0/0:state:default]", autoupdate="false"}
-Switch Lght_EG_KUE_Spots    "Küche Spots"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/1:command:*:2], <[phcmqtt:phcstatus/amd/0/1:state:default]", autoupdate="false"}
-Switch Lght_NixWissen02     "unbekannt"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/2:command:*:2], <[phcmqtt:phcstatus/amd/0/2:state:default]", autoupdate="false"}
-Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/3:command:*:2], <[phcmqtt:phcstatus/amd/0/3:state:default]", autoupdate="false"}
-Switch Plug_EG_WZ_TV        "TV Steckdose"          ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/4:command:*:2], <[phcmqtt:phcstatus/amd/0/4:state:default]", autoupdate="false"}
-Switch Lght_OG_SiZi02       "Simon Leselicht"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/5:command:*:2], <[phcmqtt:phcstatus/amd/0/5:state:default]", autoupdate="false"}
-Switch Plug_EG_WZ_Lichtl    "Strom Lichtleiste"     ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/6:command:*:2], <[phcmqtt:phcstatus/amd/0/6:state:default]", autoupdate="false"}
-Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/0/7:command:*:2], <[phcmqtt:phcstatus/amd/0/7:state:default]", autoupdate="false"}
+Switch Lght_EG_WIR_Spots    "WRaum Spots"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan00"}
+Switch Lght_EG_KUE_Spots    "Küche Spots"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan01"}
+Switch Lght_NixWissen02     "unbekannt"             ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan02"}
+Switch Lght_OG_DaZi02       "Daniel Leselicht"      ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan03"}
+Switch Plug_EG_WZ_TV        "TV Steckdose"          ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan04"}
+Switch Lght_OG_SiZi02       "Simon Leselicht"       ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan05"}
+Switch Plug_EG_WZ_Lichtl    "Strom Lichtleiste"     ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan06"}
+Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan07"}
 
 Switch Lght_EG_HOF          "Hoflampe"    (gGarten) ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/0:command:*:2], <[phcmqtt:phcstatus/amd/1/0:state:default]" , autoupdate="false"}
 Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/1:command:*:2], <[phcmqtt:phcstatus/amd/1/1:state:default]" , autoupdate="false"}
@@ -81,8 +83,8 @@ Switch Lght_EG_VOR_Korpus "Handykorpus"             ["Lighting"] { mqtt=">[phcmq
 
 Switch Lght_DB_STG          "Stiege DB"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/0:command:*:2], <[phcmqtt:phcstatus/amd/4/0:state:default]" , autoupdate="false"}
 Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:*:2], <[phcmqtt:phcstatus/amd/4/1:state:default]" , autoupdate="false"}
-Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:*:2],<[phcmqtt:phcstatus/amd/4/2:state:default]", autoupdate="false"}
-Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/3:command:*:2],<[phcmqtt:phcstatus/amd/4/3:state:default]" , autoupdate="false"}
+Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:*:2], <[phcmqtt:phcstatus/amd/4/2:state:default]" , autoupdate="false"}
+Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/3:command:*:2], <[phcmqtt:phcstatus/amd/4/3:state:default]" , autoupdate="false"}
 Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmqtt:phc/amd/4/4:command:*:2], <[phcmqtt:phcstatus/amd/4/4:state:default]" , autoupdate="false"}
 Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/4/5:state:default]" , autoupdate="false"}
 
@@ -122,6 +124,14 @@ Switch tas_chan4_4          "Tasmota04"            ["Lighting"] { mqtt=">[phcmqt
 Switch tas_wp01_1           "Tasmota Wall Plug 01" ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffwp01/cmnd/POWER:command:*:default], <[phcmqtt:tasmota/sonoffwp01/stat/POWER:state:default]" }
 Switch tas_Dual01_1         "Tasmota Dual 01.1"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER1:state:default]" }
 Switch tas_Dual01_2         "Tasmota Dual 01.2"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER2:state:default]" }
+
+Switch SW_DB_6er_1          "DB 6er Taster 01"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:1#PRESS_LONG"}
+Switch SW_DB_6er_2          "DB 6er Taster 02"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:2#PRESS_LONG"}
+Switch SW_DB_6er_3          "DB 6er Taster 03"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:3#PRESS_LONG"}
+Switch SW_DB_6er_4          "DB 6er Taster 04"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:4#PRESS_LONG"}
+Switch SW_DB_6er_5          "DB 6er Taster 05"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:5#PRESS_LONG"}
+Switch SW_DB_6er_6          "DB 6er Taster 06"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:6#PRESS_LONG"}
+
 
 Group grp_phcstatus
 String PHC_AMD_00           "PHC Modul AMD 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/0:state:default]"}

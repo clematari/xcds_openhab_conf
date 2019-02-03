@@ -42,6 +42,15 @@ then
 
 end
 
+/*
+rule "Kesselstatus change"
+when
+    Item Kesselstatus changed 
+then
+    sendNotification("clemens.schmid@xcds.at", "( " + Kesselstatus.state.toString+" ) Heizung")
+end
+*/
+
 rule "WRAUM Türe change"
 when
     Item Sec_WIR_Tuer changed 
@@ -75,23 +84,31 @@ then
     sendNotification("clemens.schmid@xcds.at", "( " + Sec_HeizR_Tuer.state.toString+" ) Heizraumtüre")
 end
 
-rule "DB Funkschalter EIN"
+rule "DB 6er alles EIN"
 when
-    Item SW_DB_Funk_Schreib1 received update ON
+    Item SW_DB_6er_2 changed from OFF to ON
 then
- 
-    Lght_DB_Mitte.sendCommand(ON) /*means toggle - not on or off*/  
+   
+   Lght_OG_SiZi02.sendCommand(ON)
+   /*
+    if (Lght_DB_Vorne.state == OFF) {Lght_DB_Vorne.sendCommand(ON)}
+    if (Lght_DB_Mitte.state == OFF) {Lght_DB_Mitte.sendCommand(ON)}
+    if (Lght_DB_Hinten.state == OFF) {Lght_DB_Hinten.sendCommand(ON)} /*means toggle - not on or off*/  
      
 end
 
-rule "DB Funkschalter AUS"
+rule "DB 6er alles AUS"
 when
-    Item SW_DB_Funk_Schreib2 received update ON
-then
- 
-    Lght_DB_Hinten.sendCommand(ON)  
-     
-end
+    Item SW_DB_6er_1 changed from OFF to ON
+ then
+ Lght_OG_SiZi02.sendCommand(ON)
+ /*
+    if (Lght_DB_Vorne.state == ON) {Lght_DB_Vorne.sendCommand(OFF)}
+    if (Lght_DB_Mitte.state == ON) {Lght_DB_Mitte.sendCommand(OFF)}
+    if (Lght_DB_Hinten.state == ON) {Lght_DB_Hinten.sendCommand(OFF)} /*means toggle - not on or off*/  
+    
+  
+end    
 
 rule "Bewegung Aussen 01 EIN"
 when

@@ -7,5 +7,5 @@ every5Minutes : "0 */5 * ? * *"
 }
  
 Items {
-gTemp* : strategy = everyUpdate
+gTemp* : strategy = everyChange, everyUpdate
 }

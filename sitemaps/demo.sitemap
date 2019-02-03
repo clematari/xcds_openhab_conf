@@ -1,80 +1,57 @@
 sitemap demo label="Main Menu"
 {
+	Frame label="XCDS Control" {
+			Group item=grp_contact label= "Kontakte" icon="frontdoor-closed"
+					
+	}
+				
+	
+	Frame label="Temp" {	
+		Group item=gTemp label= "Temperaturen"	icon="temperature"
+				
+	}
 
-Frame label="XCDS Control" {
+	
+	Frame label="Status Garten" {
+	Group item=gGarten label= "Gruppe Garten"
 		
+	}
 
 	
-			
-			Text 	item=Sec_VOR_Tuer icon="frontdoor"
-			Text 	item=Sec_VOR_Tuer_lastupdate icon="calendar"
+	Frame label="Kameras" icon="video" {
+		Group item=gCAM_OUT label="Außenkameras" icon="video"{
+				Image label="Doorkamera" item=CAM_DOOR_LASTPIC
+				Image label="Gartenkamera" item=CAM_GARTEN_LASTPIC 
+		}
+	}	
 
-			Text 	item=Sec_WIR_Tuer icon="door"
-			Text 	item=Sec_WIR_Tuer_lastupdate icon="calendar"
+	Frame label="XCDS Dimmer2" {		
+				Switch item=Lght_OG_Daniel_Dim
+				Switch item=Lght_OG_Simon_Dim
+				Switch item=Lght_EG_TVLicht_Dim 	
+				Switch item=Lght_EG_Tisch_Dim 
+	}
 
-			Text 	item=Sec_EG_DanielFenster icon="window"
-			Text 	item=Sec_EG_DanielFenster_lastupdate icon="calendar"
-
-			Text 	item=Sec_HeizR_Tuer icon="door"
-			Text 	item=Sec_HeizR_Tuer_lastupdate icon="calendar"
-
-}	
-Frame label="XCDS Temp" {		
-			Text item=outTemp 				icon="climate-on"
-			Text item=BedroomTemperature	icon="temperature"
-			Text item=MainroomTemperature	icon="temperature"
-			Text item=GarageTemperature		icon="temperature"
-			Text item=HeizraumTemperature	icon="temperature"
-}
-Frame label="Heizung" {
-			Text item=Kesselstatus 			icon="heating"
-			Text item=HK1Temperature		icon="temperature"
-			Text item=HK1SollTemperature	icon="temperature"
-			Text item=BoilerTemperature		icon="temperature"
-			Text item=KesselTemperature		icon="temperature"
-
-}
-
-Frame label="XCDS Dimmer2" {		
-			Switch item=Lght_OG_Daniel_Dim
-			Switch item=Lght_OG_Simon_Dim
-}
-
-Frame label="XCDS Dimmer3" {	
-			Switch item=Lght_EG_TVLicht_Dim 	
-			Switch item=Lght_EG_Tisch_Dim 
-			
-}
-
-Frame label="XCDS Bewegung" {		
-			Text item=Mot_OUT_01 	icon="motion"
-			Text item=Mot_OUT_01_bright
-			Switch item=gGarten	
-}
+		Frame label="XCDS Bewegung" {		
+				Text item=Mot_OUT_01 	icon="motion"
+				Text item=Mot_OUT_01_bright
+				Switch item=gGarten	
+	}
 
 
-Frame label="Daniel Zimmer" {
-			Switch item=Lght_OG_DaZi_Desk01
-			Switch item=Lght_OG_DaZi_Desk02
-			Switch item=Lght_OG_DaZi_Desk03
-			Switch item=Lght_OG_DaZi_Desk04
-			Switch item=gDaniel
-			Switch item=gZocken
-}
-Frame label="Status" {
-Group item=grp_phcstatus label= "PHC Status"
+	Frame label="Daniel Zimmer" {
+				Switch item=Lght_OG_DaZi_Desk01
+				Switch item=Lght_OG_DaZi_Desk02
+				Switch item=Lght_OG_DaZi_Desk03
+				Switch item=Lght_OG_DaZi_Desk04
+				Switch item=gDaniel
+				Switch item=gZocken
+	}
+
 	
-}
 
-Frame label="Status Garten" {
-Group item=gGarten label= "Gruppe Garten"
-	
-}
 
-Frame label="Status Contacts" {
-Group item=grp_contact label= "Gruppe Kontakte"
-	
-}
+
 Frame label="PHC AMD00"{
 		    
 			Switch 	item=Lght_EG_WIR_Spots
