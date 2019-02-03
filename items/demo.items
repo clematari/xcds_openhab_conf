@@ -94,10 +94,10 @@ Switch Cont_Schiebetuer     "Schiebetür [MAP(contact.map):%s]"       (grp_conta
 Switch Cont_Schrankr        "Schrankraum [MAP(contact.map):%s]"      (grp_contact)  {channel="mqtt:topic:mqtt25er:phcamd05:chan01", autoupdate="false"}
 Switch Cont_Schlafzimmer    "Schlafzimmer [MAP(contact.map):%s]"     (grp_contact)  {channel="mqtt:topic:mqtt25er:phcamd05:chan04", autoupdate="false"}
 
-Switch Lght_EG_Tisch_Dim       "EG Tisch"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
-Switch Lght_EG_TVLicht_Dim      "TV Light"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
-Switch Lght_OG_Daniel_Dim   "Daniel Mitte"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/2/0:command:*:2], <[phcmqtt:phcstatus/dim/2/0:state:default]" , autoupdate="false"}
-Switch Lght_OG_Simon_Dim    "Simon Mitte"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/2/1:command:*:2], <[phcmqtt:phcstatus/dim/2/1:state:default]" , autoupdate="false"}
+Switch Lght_EG_Tisch_Dim       "EG Tisch"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcdimmer:chan00", autoupdate="false"}
+Switch Lght_EG_TVLicht_Dim      "TV Light"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcdimmer:chan01", autoupdate="false"}
+Switch Lght_OG_Daniel_Dim   "Daniel Mitte"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcdimmer:chan02", autoupdate="false"}
+Switch Lght_OG_Simon_Dim    "Simon Mitte"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcdimmer:chan03", autoupdate="false"}
 
 
 Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:22b6c708:b0c6504f-9186-4381-af4c-5e1797d4cb04:control"}

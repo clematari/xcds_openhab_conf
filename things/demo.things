@@ -51,7 +51,7 @@ Thing topic phcamd03 "phcamd03_thing" {
     }
 Thing topic phcamd04 "phcamd04_thing" {
     Channels:
-        Type switch : chan00  [ stateTopic="phcstatus/amd/4/0" , commandTopic="phc/amd/4/0", ON=1, OFF=0 ]
+        Type switch : chan00  [ stateTopic="phcstatus/amd/4/0" , commandTopic="phc/dim/0/1", ON=1, OFF=0 ]
         Type switch : chan01  [ stateTopic="phcstatus/amd/4/1" , commandTopic="phc/amd/4/1", ON=1, OFF=0 ]
         Type switch : chan02  [ stateTopic="phcstatus/amd/4/2" , commandTopic="phc/amd/4/2", ON=1, OFF=0 ]
         Type switch : chan03  [ stateTopic="phcstatus/amd/4/3" , commandTopic="phc/amd/4/3", ON=1, OFF=0 ]
@@ -81,5 +81,12 @@ Thing topic phcstatus "phcstatus_thing" {
         Type number : chan05  [ stateTopic="phcstatus/amdstatus/5" ]
         Type number : chan06  [ stateTopic="phcstatus/dimstatus/0" ]
         Type number : chan07  [ stateTopic="phcstatus/dimstatus/2" ]
+    }
+Thing topic phcdimmer "phcdimmer_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/dim/0/1" , commandTopic="phc/dim/0/1", ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/dim/0/0" , commandTopic="phc/dim/0/0", ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/dim/2/0" , commandTopic="phc/dim/2/0", ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/dim/2/1" , commandTopic="phc/dim/2/1", ON=1, OFF=0 ]
     }
 }
