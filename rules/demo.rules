@@ -6,21 +6,22 @@ when
     Time cron "0 0/2 * * * ?" 
 then
 /**/
-    publish ("phcmqtt","phc/dim/0/1","3")
+    val mqttActions = getActions("mqtt", "mqtt:broker:mqtt25er")
+    mqttActions.publishMQTT ("phc/dim/0/1","3")
    
-    publish ("phcmqtt","phc/amd/0/1","3")
+    mqttActions.publishMQTT ("phc/amd/0/1","3")
     
-    publish ("phcmqtt","phc/amd/1/1","3")
+    mqttActions.publishMQTT ("phc/amd/1/1","3")
    
-    publish ("phcmqtt","phc/amd/2/1","3")
+    mqttActions.publishMQTT ("phc/amd/2/1","3")
   
-    publish ("phcmqtt","phc/amd/3/1","3")
+    mqttActions.publishMQTT ("phc/amd/3/1","3")
    
-    publish ("phcmqtt","phc/amd/4/1","3")
+    mqttActions.publishMQTT ("phc/amd/4/1","3")
 
-    publish ("phcmqtt","phc/amd/5/1","3")
+    mqttActions.publishMQTT ("phc/amd/5/1","3")
  
-    publish ("phcmqtt","phc/dim/2/1","3")
+    mqttActions.publishMQTT ("phc/dim/2/1","3")
 
 /**/
 end
@@ -88,12 +89,9 @@ rule "DB 6er alles EIN"
 when
     Item SW_DB_6er_2 changed from OFF to ON
 then
-   
-   Lght_OG_SiZi02.sendCommand(ON)
-   /*
-    if (Lght_DB_Vorne.state == OFF) {Lght_DB_Vorne.sendCommand(ON)}
-    if (Lght_DB_Mitte.state == OFF) {Lght_DB_Mitte.sendCommand(ON)}
-    if (Lght_DB_Hinten.state == OFF) {Lght_DB_Hinten.sendCommand(ON)} /*means toggle - not on or off*/  
+    Lght_DB_Vorne.sendCommand(ON)
+    Lght_DB_Mitte.sendCommand(ON)
+    Lght_DB_Hinten.sendCommand(ON)
      
 end
 
@@ -101,14 +99,50 @@ rule "DB 6er alles AUS"
 when
     Item SW_DB_6er_1 changed from OFF to ON
  then
- Lght_OG_SiZi02.sendCommand(ON)
- /*
-    if (Lght_DB_Vorne.state == ON) {Lght_DB_Vorne.sendCommand(OFF)}
-    if (Lght_DB_Mitte.state == ON) {Lght_DB_Mitte.sendCommand(OFF)}
-    if (Lght_DB_Hinten.state == ON) {Lght_DB_Hinten.sendCommand(OFF)} /*means toggle - not on or off*/  
-    
-  
-end    
+    Lght_DB_Vorne.sendCommand(OFF)
+    Lght_DB_Mitte.sendCommand(OFF)
+    Lght_DB_Hinten.sendCommand(OFF) 
+end  
+
+rule "DB 6er Vorne toggeln"
+when
+    Item SW_DB_6er_3 changed from OFF to ON
+ then
+   if (Lght_DB_Vorne.state == ON) 
+            {Lght_DB_Vorne.sendCommand(OFF)}
+        else 
+            {Lght_DB_Vorne.sendCommand(ON)}
+end  
+
+rule "DB 6er Mitte toggeln"
+when
+    Item SW_DB_6er_4 changed from OFF to ON
+ then
+   if (Lght_DB_Mitte.state == ON) 
+            {Lght_DB_Mitte.sendCommand(OFF)}
+        else 
+            {Lght_DB_Mitte.sendCommand(ON)}
+end  
+
+rule "DB 6er Hinten toggeln"
+when
+    Item SW_DB_6er_5 changed from OFF to ON
+ then
+   if (Lght_DB_Hinten.state == ON) 
+            {Lght_DB_Hinten.sendCommand(OFF)}
+        else 
+            {Lght_DB_Hinten.sendCommand(ON)}
+end 
+
+rule "DB 6er Stiege toggeln"
+when
+    Item SW_DB_6er_6 changed from OFF to ON
+ then
+   if (Lght_DB_STG.state == ON) 
+            {Lght_DB_STG.sendCommand(OFF)}
+        else 
+            {Lght_DB_STG.sendCommand(ON)}
+end 
 
 rule "Bewegung Aussen 01 EIN"
 when
@@ -116,8 +150,8 @@ when
 then
 
     if  (Mot_OUT_01_bright.state < 60) {
-        if (Lght_EG_HOF.state == OFF ) {Lght_EG_HOF.sendCommand(ON)}
-        if (Lght_EG_HR_aussen.state == OFF) { Lght_EG_HR_aussen.sendCommand(ON)}
+        Lght_EG_HOF.sendCommand(ON)
+        Lght_EG_HR_aussen.sendCommand(ON)
         Lght_OUT_Holler.sendCommand(ON)
         Lght_OUT_Sonja.sendCommand(ON)
         Lght_GA_Pergola.sendCommand(ON)
@@ -129,10 +163,10 @@ rule "Bewegung Aussen 01 AUS"
 when
     Item Mot_OUT_01 received update OFF
 then
-        if (Lght_EG_HOF.state == ON) {Lght_EG_HOF.sendCommand(OFF)}
+        Lght_EG_HOF.sendCommand(OFF)
         Lght_OUT_Holler.sendCommand(OFF)
         Lght_OUT_Sonja.sendCommand(OFF)
-        if (Lght_EG_HR_aussen.state == ON) { Lght_EG_HR_aussen.sendCommand(OFF)}
+        Lght_EG_HR_aussen.sendCommand(OFF)
         Lght_GA_Pergola.sendCommand(OFF)
         Lght_OUT_Zaun.sendCommand(OFF)
     

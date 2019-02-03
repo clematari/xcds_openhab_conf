@@ -17,7 +17,11 @@ sitemap demo label="Main Menu"
 		
 	}
 
-	
+	Frame label="Status phc" {
+	Group item=grp_phcstatus label= "Gruppe PHC"
+		
+	}
+
 	Frame label="Kameras" icon="video" {
 		Group item=gCAM_OUT label="Außenkameras" icon="video"{
 				Image label="Doorkamera" item=CAM_DOOR_LASTPIC

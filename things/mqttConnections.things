@@ -1,1 +1,0 @@
-mqtt:broker:mqtt25 [ host="10.0.0.25", secure=false, username="openhabian", password="3313" , clientID="myMQTTClient" ]

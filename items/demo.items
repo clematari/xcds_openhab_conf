@@ -53,46 +53,46 @@ Switch Lght_OG_SiZi02       "Simon Leselicht"       ["Lighting"] {channel="mqtt:
 Switch Plug_EG_WZ_Lichtl    "Strom Lichtleiste"     ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan06"}
 Switch Lght_OG_BAD_LA       "Badezimmer"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd00:chan07"}
 
-Switch Lght_EG_HOF          "Hoflampe"    (gGarten) ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/0:command:*:2], <[phcmqtt:phcstatus/amd/1/0:state:default]" , autoupdate="false"}
-Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/1:command:*:2], <[phcmqtt:phcstatus/amd/1/1:state:default]" , autoupdate="false"}
-Switch Lght_EG_KUE_Aplatte  "Küche Arbeitsplatte"   ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/2:command:*:2], <[phcmqtt:phcstatus/amd/1/2:state:default]" , autoupdate="false"}
-Switch Lght_EG_KUE_Bar      "Küche Bar"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/3:command:*:2], <[phcmqtt:phcstatus/amd/1/3:state:default]" , autoupdate="false"}
-Switch Lght_EG_WC           "EG WC Licht"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/4:command:*:2], <[phcmqtt:phcstatus/amd/1/4:state:default]" , autoupdate="false"}
-Switch Lght_EG_VOR_Mitte    "Vorzimmerlicht"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/5:command:*:2], <[phcmqtt:phcstatus/amd/1/5:state:default]" , autoupdate="false"}
-Switch Powr_EG_WIR_Lueftung "WRaum Lueftung"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/6:command:*:2], <[phcmqtt:phcstatus/amd/1/6:state:default]" , autoupdate="false"}
-Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/1/7:command:*:2], <[phcmqtt:phcstatus/amd/1/7:state:default]" , autoupdate="false"}
+Switch Lght_EG_HOF          "Hoflampe"    (gGarten) ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan00"}  
+Switch Lght_EG_WIR_Spiegel  "WRaum Spiegel"         ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan01"}
+Switch Lght_EG_KUE_Aplatte  "Küche Arbeitsplatte"   ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan02"}
+Switch Lght_EG_KUE_Bar      "Küche Bar"             ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan03"}
+Switch Lght_EG_WC           "EG WC Licht"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan04"}
+Switch Lght_EG_VOR_Mitte    "Vorzimmerlicht"        ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan05"}
+Switch Powr_EG_WIR_Lueftung "WRaum Lueftung"        ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan06"}
+Switch Lght_DB_Hinten       "Dachboden hinten"      ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd01:chan07"}
 
 
-Switch Plug_OG_BoxStrom   "Strom Slafzimmer"                     { mqtt=">[phcmqtt:phc/amd/2/0:command:*:2], <[phcmqtt:phcstatus/amd/2/0:state:default]" , autoupdate="false"}
-Switch Lght_OG_SRR_Mitte  "Schlafzimmer Mitte"      ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/1:command:*:2], <[phcmqtt:phcstatus/amd/2/1:state:default]" , autoupdate="false"}
-Switch Lght_OG_SRR_Leds   "Schrankraum Leds"        ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/2:command:*:2], <[phcmqtt:phcstatus/amd/2/2:state:default]" , autoupdate="false"}
-Switch Lght_EG_HR_Mitte   "Heizraum Mitte"          ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/3:command:*:2], <[phcmqtt:phcstatus/amd/2/3:state:default]" , autoupdate="false"}
-Switch Lght_OG_SLZ_Xandi  "Bett Xandi"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/4:command:*:2], <[phcmqtt:phcstatus/amd/2/4:state:default]" , autoupdate="false"}
-Switch Lght_OG_SLZ_Clemi  "Bett Clemi"              ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/5:command:*:2], <[phcmqtt:phcstatus/amd/2/5:state:default]" , autoupdate="false"}
-Switch Lght_OG_SRR_Spieg  "Schrankraum Spiegel"     ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/6:command:*:2], <[phcmqtt:phcstatus/amd/2/6:state:default]" , autoupdate="false"}
-Switch Lght_EG_HR_aussen  "Heizraum out"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/2/7:command:*:2], <[phcmqtt:phcstatus/amd/2/7:state:default]" , autoupdate="false"}
+Switch Plug_OG_BoxStrom   "Strom Slafzimmer"                     {channel="mqtt:topic:mqtt25er:phcamd02:chan00", autoupdate="false"}
+Switch Lght_OG_SRR_Mitte  "Schlafzimmer Mitte"      ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan01", autoupdate="false"}
+Switch Lght_OG_SRR_Leds   "Schrankraum Leds"        ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan02", autoupdate="false"}
+Switch Lght_EG_HR_Mitte   "Heizraum Mitte"          ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan03", autoupdate="false"}
+Switch Lght_OG_SLZ_Xandi  "Bett Xandi"              ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan04", autoupdate="false"}
+Switch Lght_OG_SLZ_Clemi  "Bett Clemi"              ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan05", autoupdate="false"}
+Switch Lght_OG_SRR_Spieg  "Schrankraum Spiegel"     ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan06", autoupdate="false"}
+Switch Lght_EG_HR_aussen  "Heizraum out"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd02:chan07", autoupdate="false"}
 
-Switch Lght_OUT_Eingang   "Eingangstüre"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/0:command:*:2], <[phcmqtt:phcstatus/amd/3/0:state:default]" , autoupdate="false"}
-Switch Plug_EG_WC_Vent    "EG WC Lüftung"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/1:command:*:2], <[phcmqtt:phcstatus/amd/3/1:state:default]" , autoupdate="false"}
-Switch Plug_OG_WC_Vent    "OG WC Lüftung"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/2:command:*:2], <[phcmqtt:phcstatus/amd/3/2:state:default]" , autoupdate="false"}
-Switch Lght_OG_WC_Mitte   "OG WC Lichtizraum Mitte" ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/3:command:*:2], <[phcmqtt:phcstatus/amd/3/3:state:default]" , autoupdate="false"}
-Switch Lght_EG_VZ_Lichts  "Lichtschlitz Vorzimmer"  ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/4:command:*:2], <[phcmqtt:phcstatus/amd/3/4:state:default]" , autoupdate="false"}
-Switch Lght_NixWissen35   "unbekannt"               ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/5:command:*:2], <[phcmqtt:phcstatus/amd/3/5:state:default]" , autoupdate="false"}
-Switch Lght_OG_VOR_Mitte  "OG Vorzimmer"            ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/6:command:*:2], <[phcmqtt:phcstatus/amd/3/6:state:default]" , autoupdate="false"}
-Switch Lght_EG_VOR_Korpus "Handykorpus"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/3/7:command:*:2], <[phcmqtt:phcstatus/amd/3/7:state:default]" , autoupdate="false"}
+Switch Lght_OUT_Eingang   "Eingangstüre"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan00", autoupdate="false"}
+Switch Plug_EG_WC_Vent    "EG WC Lüftung"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan01", autoupdate="false"}
+Switch Plug_OG_WC_Vent    "OG WC Lüftung"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan02", autoupdate="false"}
+Switch Lght_OG_WC_Mitte   "OG WC Lichtizraum Mitte" ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan03", autoupdate="false"}
+Switch Lght_EG_VZ_Lichts  "Lichtschlitz Vorzimmer"  ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan04", autoupdate="false"}
+Switch Lght_NixWissen35   "unbekannt"               ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan05", autoupdate="false"}
+Switch Lght_OG_VOR_Mitte  "OG Vorzimmer"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan06", autoupdate="false"}
+Switch Lght_EG_VOR_Korpus "Handykorpus"             ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd03:chan07", autoupdate="false"}
 
-Switch Lght_DB_STG          "Stiege DB"             ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/0:command:*:2], <[phcmqtt:phcstatus/amd/4/0:state:default]" , autoupdate="false"}
-Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/1:command:*:2], <[phcmqtt:phcstatus/amd/4/1:state:default]" , autoupdate="false"}
-Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/2:command:*:2], <[phcmqtt:phcstatus/amd/4/2:state:default]" , autoupdate="false"}
-Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] { mqtt=">[phcmqtt:phc/amd/4/3:command:*:2], <[phcmqtt:phcstatus/amd/4/3:state:default]" , autoupdate="false"}
-Switch Plug_WIR_Scanner     "Strom Scanner"                      { mqtt=">[phcmqtt:phc/amd/4/4:command:*:2], <[phcmqtt:phcstatus/amd/4/4:state:default]" , autoupdate="false"}
-Switch Plug_OUT_Terrasse    "Strom Terasse"                      { mqtt=">[phcmqtt:phc/amd/4/5:command:*:2], <[phcmqtt:phcstatus/amd/4/5:state:default]" , autoupdate="false"}
+Switch Lght_DB_STG          "Stiege DB"             ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd04:chan00", autoupdate="false"}
+Switch Lght_OG_BAD_Spiegel  "BAD Spiegel"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd04:chan01", autoupdate="false"}
+Switch Lght_DB_Vorne        "Dachboden vorne"       ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd04:chan02", autoupdate="false"}
+Switch Lght_DB_Mitte        "Dachboden mitte"       ["Lighting"] {channel="mqtt:topic:mqtt25er:phcamd04:chan03", autoupdate="false"}
+Switch Plug_WIR_Scanner     "Strom Scanner"                      {channel="mqtt:topic:mqtt25er:phcamd04:chan04", autoupdate="false"}
+Switch Plug_OUT_Terrasse    "Strom Terasse"                      {channel="mqtt:topic:mqtt25er:phcamd04:chan05", autoupdate="false"}
 
 Group grp_contact
-Switch Cont_WraumFenster    "WRaum Fenster  [MAP(contact.map):%s] "  (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/0:state:default]"}
-Switch Cont_Schiebetuer     "Schiebetür [MAP(contact.map):%s]"       (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/5:state:default]"}
-Switch Cont_Schrankr        "Schrankraum [MAP(contact.map):%s]"      (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/1:state:default]"}
-Switch Cont_Schlafzimmer    "Schlafzimmer [MAP(contact.map):%s]"     (grp_contact)  { mqtt="<[phcmqtt:phcstatus/amd/5/4:state:default]"}
+Switch Cont_WraumFenster    "WRaum Fenster  [MAP(contact.map):%s] "  (grp_contact)  {channel="mqtt:topic:mqtt25er:phcamd05:chan00", autoupdate="false"}
+Switch Cont_Schiebetuer     "Schiebetür [MAP(contact.map):%s]"       (grp_contact)  {channel="mqtt:topic:mqtt25er:phcamd05:chan05", autoupdate="false"}
+Switch Cont_Schrankr        "Schrankraum [MAP(contact.map):%s]"      (grp_contact)  {channel="mqtt:topic:mqtt25er:phcamd05:chan01", autoupdate="false"}
+Switch Cont_Schlafzimmer    "Schlafzimmer [MAP(contact.map):%s]"     (grp_contact)  {channel="mqtt:topic:mqtt25er:phcamd05:chan04", autoupdate="false"}
 
 Switch Lght_EG_Tisch_Dim       "EG Tisch"            ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/1:command:*:2], <[phcmqtt:phcstatus/dim/0/1:state:default]" , autoupdate="false"}
 Switch Lght_EG_TVLicht_Dim      "TV Light"           ["Lighting"] { mqtt=">[phcmqtt:phc/dim/0/0:command:*:2], <[phcmqtt:phcstatus/dim/0/0:state:default]" , autoupdate="false"}
@@ -113,8 +113,8 @@ Switch Lght_GA_Garage       "Garage"        (gGarten)       ["Lighting"] { chann
 Switch Lght_OUT_Holler      "Garten Holler" (gGarten)       ["Lightning"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:17#STATE"}
 Switch Plug_GA_Pool         "PoolPumpe"                     ["Switchable"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:18#STATE"}
 Switch Lght_GA_Pergola      "Pergola"       (gGarten)       ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:19#STATE"}
-Switch SW_DB_Funk_Schreib1  "DB Schreibtisch EIN"  ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:1#PRESS_SHORT", autoupdate="false"}
-Switch SW_DB_Funk_Schreib2  "DB Schreibtisch AUS"  ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:2#PRESS_SHORT", autoupdate="false"}
+Switch SW_DB_Funk_Schreib1  "DB Schreibtisch EIN"           ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:1#PRESS_SHORT"}
+Switch SW_DB_Funk_Schreib2  "DB Schreibtisch AUS"           ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:2#PRESS_SHORT"}
 
 Switch tas_chan4_1          "Tasmota01"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER1:state:default]" }
 Switch tas_chan4_2          "Tasmota02"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER2:state:default]" }
@@ -134,14 +134,14 @@ Switch SW_DB_6er_6          "DB 6er Taster 06"      {channel="homematic:HmIP-WRC
 
 
 Group grp_phcstatus
-String PHC_AMD_00           "PHC Modul AMD 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/0:state:default]"}
-String PHC_AMD_01           "PHC Modul AMD 01 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/1:state:default]"}
-String PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/2:state:default]"}
-String PHC_AMD_03           "PHC Modul AMD 03 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/3:state:default]"}
-String PHC_AMD_04           "PHC Modul AMD 04 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/4:state:default]"}
-String PHC_AMD_05           "PHC Modul AMD 05 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/amdstatus/5:state:default]"}
-String PHC_DIM_00           "PHC Modul DIM 00 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/0:state:default]"}
-String PHC_DIM_02           "PHC Modul DIM 02 [%d]"    (grp_phcstatus)  { mqtt="<[phcmqtt:phcstatus/dimstatus/2:state:default]"}
+Number PHC_AMD_00           "PHC Modul AMD 00 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan00"}
+Number PHC_AMD_01           "PHC Modul AMD 01 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan01"}
+Number PHC_AMD_02           "PHC Modul AMD 02 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan02"}
+Number PHC_AMD_03           "PHC Modul AMD 03 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan03"}
+Number PHC_AMD_04           "PHC Modul AMD 04 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan04"}
+Number PHC_AMD_05           "PHC Modul AMD 05 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan05"}
+Number PHC_DIM_00           "PHC Modul DIM 00 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan06"}
+Number PHC_DIM_02           "PHC Modul DIM 02 [%d]"    (grp_phcstatus)  {channel="mqtt:topic:mqtt25er:phcstatus:chan07"}
 
 
 

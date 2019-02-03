@@ -1,2 +1,85 @@
 yahooweather:weather:berlin [ location="638242" ]
 astro:sun:home  [ geolocation="52.5200066,13.4049540", interval=60 ]
+Bridge mqtt:broker:mqtt25er [ host="10.0.0.25", secure=false, username="openhabian", password="3313" , clientID="openhabclient" ]
+{
+    Thing topic phcamd00 "phcamd00_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/amd/0/0" , commandTopic="phc/amd/0/0", ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/amd/0/1" , commandTopic="phc/amd/0/1", ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/amd/0/2" , commandTopic="phc/amd/0/2", ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/amd/0/3" , commandTopic="phc/amd/0/3", ON=1, OFF=0 ]
+        Type switch : chan04  [ stateTopic="phcstatus/amd/0/4" , commandTopic="phc/amd/0/4", ON=1, OFF=0 ]
+        Type switch : chan05  [ stateTopic="phcstatus/amd/0/5" , commandTopic="phc/amd/0/5", ON=1, OFF=0 ]
+        Type switch : chan06  [ stateTopic="phcstatus/amd/0/6" , commandTopic="phc/amd/0/6", ON=1, OFF=0 ]
+        Type switch : chan07  [ stateTopic="phcstatus/amd/0/7" , commandTopic="phc/amd/0/7", ON=1, OFF=0 ]
+    }
+
+Thing topic phcamd01 "phcamd01_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/amd/1/0" , commandTopic="phc/amd/1/0", ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/amd/1/1" , commandTopic="phc/amd/1/1", ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/amd/1/2" , commandTopic="phc/amd/1/2", ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/amd/1/3" , commandTopic="phc/amd/1/3", ON=1, OFF=0 ]
+        Type switch : chan04  [ stateTopic="phcstatus/amd/1/4" , commandTopic="phc/amd/1/4", ON=1, OFF=0 ]
+        Type switch : chan05  [ stateTopic="phcstatus/amd/1/5" , commandTopic="phc/amd/1/5", ON=1, OFF=0 ]
+        Type switch : chan06  [ stateTopic="phcstatus/amd/1/6" , commandTopic="phc/amd/1/6", ON=1, OFF=0 ]
+        Type switch : chan07  [ stateTopic="phcstatus/amd/1/7" , commandTopic="phc/amd/1/7", ON=1, OFF=0 ]
+    }
+
+Thing topic phcamd02 "phcamd02_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/amd/2/0" , commandTopic="phc/amd/2/0", ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/amd/2/1" , commandTopic="phc/amd/2/1", ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/amd/2/2" , commandTopic="phc/amd/2/2", ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/amd/2/3" , commandTopic="phc/amd/2/3", ON=1, OFF=0 ]
+        Type switch : chan04  [ stateTopic="phcstatus/amd/2/4" , commandTopic="phc/amd/2/4", ON=1, OFF=0 ]
+        Type switch : chan05  [ stateTopic="phcstatus/amd/2/5" , commandTopic="phc/amd/2/5", ON=1, OFF=0 ]
+        Type switch : chan06  [ stateTopic="phcstatus/amd/2/6" , commandTopic="phc/amd/2/6", ON=1, OFF=0 ]
+        Type switch : chan07  [ stateTopic="phcstatus/amd/2/7" , commandTopic="phc/amd/2/7", ON=1, OFF=0 ]
+    }
+
+Thing topic phcamd03 "phcamd03_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/amd/3/0" , commandTopic="phc/amd/3/0", ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/amd/3/1" , commandTopic="phc/amd/3/1", ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/amd/3/2" , commandTopic="phc/amd/3/2", ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/amd/3/3" , commandTopic="phc/amd/3/3", ON=1, OFF=0 ]
+        Type switch : chan04  [ stateTopic="phcstatus/amd/3/4" , commandTopic="phc/amd/3/4", ON=1, OFF=0 ]
+        Type switch : chan05  [ stateTopic="phcstatus/amd/3/5" , commandTopic="phc/amd/3/5", ON=1, OFF=0 ]
+        Type switch : chan06  [ stateTopic="phcstatus/amd/3/6" , commandTopic="phc/amd/3/6", ON=1, OFF=0 ]
+        Type switch : chan07  [ stateTopic="phcstatus/amd/3/7" , commandTopic="phc/amd/3/7", ON=1, OFF=0 ]
+    }
+Thing topic phcamd04 "phcamd04_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/amd/4/0" , commandTopic="phc/amd/4/0", ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/amd/4/1" , commandTopic="phc/amd/4/1", ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/amd/4/2" , commandTopic="phc/amd/4/2", ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/amd/4/3" , commandTopic="phc/amd/4/3", ON=1, OFF=0 ]
+        Type switch : chan04  [ stateTopic="phcstatus/amd/4/4" , commandTopic="phc/amd/4/4", ON=1, OFF=0 ]
+        Type switch : chan05  [ stateTopic="phcstatus/amd/4/5" , commandTopic="phc/amd/4/5", ON=1, OFF=0 ]
+        Type switch : chan06  [ stateTopic="phcstatus/amd/4/6" , commandTopic="phc/amd/4/6", ON=1, OFF=0 ]
+        Type switch : chan07  [ stateTopic="phcstatus/amd/4/7" , commandTopic="phc/amd/4/7", ON=1, OFF=0 ]
+    }
+Thing topic phcamd05 "phcamd05_thing" {
+    Channels:
+        Type switch : chan00  [ stateTopic="phcstatus/amd/5/0" , ON=1, OFF=0 ]
+        Type switch : chan01  [ stateTopic="phcstatus/amd/5/1" , ON=1, OFF=0 ]
+        Type switch : chan02  [ stateTopic="phcstatus/amd/5/2" , ON=1, OFF=0 ]
+        Type switch : chan03  [ stateTopic="phcstatus/amd/5/3" , ON=1, OFF=0 ]
+        Type switch : chan04  [ stateTopic="phcstatus/amd/5/4" , ON=1, OFF=0 ]
+        Type switch : chan05  [ stateTopic="phcstatus/amd/5/5" , ON=1, OFF=0 ]
+        Type switch : chan06  [ stateTopic="phcstatus/amd/5/6" , ON=1, OFF=0 ]
+        Type switch : chan07  [ stateTopic="phcstatus/amd/5/7" , ON=1, OFF=0 ]
+    }
+Thing topic phcstatus "phcstatus_thing" {
+    Channels:
+        Type number : chan00  [ stateTopic="phcstatus/amdstatus/0" ]
+        Type number : chan01  [ stateTopic="phcstatus/amdstatus/1" ]
+        Type number : chan02  [ stateTopic="phcstatus/amdstatus/2" ]
+        Type number : chan03  [ stateTopic="phcstatus/amdstatus/3" ]
+        Type number : chan04  [ stateTopic="phcstatus/amdstatus/4" ]
+        Type number : chan05  [ stateTopic="phcstatus/amdstatus/5" ]
+        Type number : chan06  [ stateTopic="phcstatus/dimstatus/0" ]
+        Type number : chan07  [ stateTopic="phcstatus/dimstatus/2" ]
+    }
+}
