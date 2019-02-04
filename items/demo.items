@@ -3,9 +3,13 @@ Group gCAM_OUT
 Number outTemp "Luft Temperatur [%.1f °C]"                          (gTemp) [ "CurrentTemperature "] { channel="homematic:HmIP-STHO-A:MEQ0006169:0010D709AF41DB:1#ACTUAL_TEMPERATURE" }
 Number BedroomTemperature   "Schlafzimmer Temperatur [%.1f °C]"     (gTemp) [ "CurrentTemperature" ] { channel="homematic:HmIP-WTH-2:MEQ0006169:000A9709AEDAF1:1#ACTUAL_TEMPERATURE" }
 Number MainroomTemperature  "Wohnzimmer Temperatur [%.1f °C]"       (gTemp) [ "CurrentTemperature" ] { channel="homematic:HmIP-STHD:MEQ0006169:000E9569A3177B:1#ACTUAL_TEMPERATURE" }
+Number GarageTemperature "Garage Temperatur [%.1f °C]"              (gTemp) [ "CurrentTemperature" ]  {channel="mqtt:topic:mqtt25er:sonoffTH16:temp"}
+Number HeizraumTemperature "Heizraum Temperatur [%.1f °C]"          (gTemp) [ "CurrentTemperature" ]  {channel="mqtt:topic:mqtt25er:nodemcu:temp"}
+/*
+String Temp "Text value" {channel="mqtt:topic:mqtt25er:nodemcu:temp"}
 Number GarageTemperature "Garage Temperatur [%.1f °C]"              (gTemp) [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/sonoffTH16/tele/SENSOR:state:JSONPATH($.DS18B20.Temperature)]" }
 Number HeizraumTemperature "Heizraum Temperatur [%.1f °C]"          (gTemp) [ "CurrentTemperature" ] { mqtt="<[phcmqtt:tasmota/nodemcu/tele/SENSOR:state:JSONPATH($.DS18S20.Temperature)]" }
-
+*/
 Number Kesselstatus "Kesselstatus [MAP(hargassner.map):%.0f]"       (gTemp) { http="<[http://10.0.0.111:300000:REGEX(.*?<Kesselstatus>(.*?)</Kesselstatus>.*)]"}
 DateTime Kesselstatus_lastupdate  "Heizung letztes Update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" (gTemp)
 Number HK1Temperature "Heizkreis [%.1f °C]"                         (gTemp) [ "CurrentTemperature" ]  { http="<[http://10.0.0.111:300000:REGEX(.*?<Temp_HK1_ist>(.*?)</Temp_HK1_ist>.*)]"}
@@ -99,12 +103,14 @@ Switch Lght_EG_TVLicht_Dim      "TV Light"           ["Lighting"] {channel="mqtt
 Switch Lght_OG_Daniel_Dim   "Daniel Mitte"           ["Lighting"] {channel="mqtt:topic:mqtt25er:phcdimmer:chan02", autoupdate="false"}
 Switch Lght_OG_Simon_Dim    "Simon Mitte"            ["Lighting"] {channel="mqtt:topic:mqtt25er:phcdimmer:chan03", autoupdate="false"}
 
+ Rollershutter   Wintergarten_Control   "Control"  
 
-Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:22b6c708:b0c6504f-9186-4381-af4c-5e1797d4cb04:control"}
-Rollershutter RS_DB_Gasse   "Rollo Gasse [%d %%]"           ["Switchable"] { channel="somfytahoma:rollershutter:22b6c708:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:control"}
-Rollershutter RS_DB_Stiege  "Rollo Stiege [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:4aaedadd:971b0408-3bcf-46e2-a5a9-dd72b63202f0:control"}
-Rollershutter RS_Terrasse   "Markise [%d %%]"               ["Switchable"] { channel="somfytahoma:awning:4aaedadd:9866db3d-88c3-486b-ba53-5a70e73d3477:control"} 
-Rollershutter RS_WinterG    "Wintergarten [%d %%]"          ["Switchable"] { channel="somfytahoma:exteriorscreen:4aaedadd:5c7aee9c-5659-4375-beda-61ec6dc3fe17:control"}
+Rollershutter RS_DB_Garten  "Rollo Garten [%d %%]"          ["Switchable"] { channel="somfytahoma:rollershutter:f5a46d3d:b0c6504f-9186-4381-af4c-5e1797d4cb04:control"}
+Rollershutter RS_DB_Gasse   "Rollo Gasse [%d %%]"           ["Switchable"] {channel="somfytahoma:rollershutter:f5a46d3d:b06cf62f-0bcd-48c6-a418-bf5722c3e50c:control"}
+Rollershutter RS_DB_Stiege  "Rollo Stiege [%d %%]"          ["Switchable"] {channel="somfytahoma:rollershutter:f5a46d3d:971b0408-3bcf-46e2-a5a9-dd72b63202f0:control"}
+Rollershutter RS_Terrasse   "Markise [%d %%]"               ["Switchable"] {channel="somfytahoma:awning:f5a46d3d:9866db3d-88c3-486b-ba53-5a70e73d3477:control"}
+Rollershutter RS_WinterG    "Wintergarten [%d %%]"          ["Switchable"] {channel="somfytahoma:exteriorscreen:f5a46d3d:5c7aee9c-5659-4375-beda-61ec6dc3fe17:control"}
+*/
 
 Switch Lght_GA_GHuette      "Gartenhuette"  (gGarten)       ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:13#STATE"}
 Switch Lght_OUT_Zaun        "Garten Zaun"   (gGarten)       ["Lighting"] { channel="homematic:HMW-IO-12-Sw7-DR:MEQ0006169:MEQ0279241:14#STATE"}
@@ -116,15 +122,16 @@ Switch Lght_GA_Pergola      "Pergola"       (gGarten)       ["Lighting"] { chann
 Switch SW_DB_Funk_Schreib1  "DB Schreibtisch EIN"           ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:1#PRESS_SHORT"}
 Switch SW_DB_Funk_Schreib2  "DB Schreibtisch AUS"           ["Switchable"] { channel="homematic:HM-PB-2-WM55-2:MEQ0006169:MEQ0159245:2#PRESS_SHORT"}
 
-Switch tas_chan4_1          "Tasmota01"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER1:state:default]" }
+/*Switch tas_chan4_1          "Tasmota01"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER1:state:default]" }
 Switch tas_chan4_2          "Tasmota02"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER2:state:default]" }
 Switch tas_chan4_3          "Tasmota03"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER3:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER3:state:default]" }
 Switch tas_chan4_4          "Tasmota04"            ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoff4ch/cmnd/POWER4:command:*:default], <[phcmqtt:tasmota/sonoff4ch/stat/POWER4:state:default]" }
 
 Switch tas_wp01_1           "Tasmota Wall Plug 01" ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffwp01/cmnd/POWER:command:*:default], <[phcmqtt:tasmota/sonoffwp01/stat/POWER:state:default]" }
+
 Switch tas_Dual01_1         "Tasmota Dual 01.1"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER1:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER1:state:default]" }
 Switch tas_Dual01_2         "Tasmota Dual 01.2"    ["Lighting"] { mqtt=">[phcmqtt:tasmota/sonoffR2/cmnd/POWER2:command:*:default], <[phcmqtt:tasmota/sonoffR2/stat/POWER2:state:default]" }
-
+*/
 Switch SW_DB_6er_1          "DB 6er Taster 01"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:1#PRESS_LONG"}
 Switch SW_DB_6er_2          "DB 6er Taster 02"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:2#PRESS_LONG"}
 Switch SW_DB_6er_3          "DB 6er Taster 03"      {channel="homematic:HmIP-WRC6:MEQ0006169:000B58A9A4E520:3#PRESS_LONG"}

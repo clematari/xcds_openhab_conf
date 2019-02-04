@@ -89,4 +89,15 @@ Thing topic phcdimmer "phcdimmer_thing" {
         Type switch : chan02  [ stateTopic="phcstatus/dim/2/0" , commandTopic="phc/dim/2/0", ON=1, OFF=0 ]
         Type switch : chan03  [ stateTopic="phcstatus/dim/2/1" , commandTopic="phc/dim/2/1", ON=1, OFF=0 ]
     }
+
+Thing topic nodemcu "nodemcu_thing" {
+    Channels:
+        Type string : temp  [ stateTopic="tasmota/nodemcu/tele/SENSOR" , transformationPattern="JSONPATH:$.DS18B20.Temperature" ]
+    }
+
+Thing topic sonoffTH16 "sonoffTH16_thing" {
+    Channels:
+        Type string : temp  [ stateTopic="tasmota/sonoffTH16/tele/SENSOR" , transformationPattern="JSONPATH:$.DS18B20.Temperature" ]
+        Type string : lastwill  [ stateTopic="tasmota/sonoffTH16/tele/LWT"]
+    }
 }

@@ -115,17 +115,6 @@ Frame label="Homematic"{
 }	
 
 
-Frame label="XCDS Tasmota Schalter"{			
-			Switch item=tas_Dual01_1
-			Switch item=tas_Dual01_2			
-			Switch item=tas_wp01_1
-			Switch item=tas_chan4_1 
-			Switch item=tas_chan4_2
-			Switch item=tas_chan4_3 
-			Switch item=tas_chan4_4
-			
-		}
-
 Frame label="XCDS Rollershutter"{			
 			Switch item=RS_DB_Gasse
 			Switch item=RS_DB_Garten
